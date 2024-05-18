@@ -8,6 +8,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 const routes = [
   { path: '/', component: () => import('../pages/home/home.page.vue') },
   { path: '/about', component: () => import('../pages/about/about.page.vue') },
+  { path: '/register', component: () => import('../pages/auth/registerNowLogin.page.vue') },
 ];
 // ____________________________________________________________________
 

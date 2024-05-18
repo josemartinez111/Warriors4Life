@@ -20,7 +20,7 @@ export const UseNavBar = () => {
     { name: 'Home', to: '/' },
     { name: 'About', to: '/about' },
     { name: 'Our Journey', to: '#' },
-    { name: 'Register Now/Login', to: '#', specialStyle: `nav-login ${ bgPinkFriday }` },
+    { name: 'Register Now/Login', to: '/register', specialStyle: `flex items-center justify-center nav-login ${ bgPinkFriday }` },
   ];
   
   // Access the current route reactively
