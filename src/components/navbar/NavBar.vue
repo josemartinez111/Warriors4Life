@@ -29,7 +29,7 @@ const { navLinks, activeTab, mobileMenuOpen, isMobile, toggleMenu } = UseNavBar(
             height="auto"
             :src="logo"
             alt="Logo"
-            class="h-8 sm:h-6 md:h-6 mr-2 shadow-inner drop-shadow-2xl"
+            class="h-8 sm:h-12 md:h-16 w-auto mr-2 shadow-inner drop-shadow-2xl"
           />
           <span class="text-sm sm:text-lg md:text-[1.5rem] uppercase shadow-accent drop-shadow-2xl">
             Warriors4Life
