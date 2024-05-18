@@ -1,0 +1,42 @@
+/* ################################################################### */
+/*                         navbar.styles.css                           */
+/* ################################################################### */
+
+.header-container {
+  @apply fixed top-0 left-0 w-full z-50
+  bg-gradient-to-r from-slate-950 to-transparent;
+}
+
+.logo-link {
+  @apply flex pl-6 justify-between items-center
+  hover:bg-accent-content/80;
+}
+
+.nav-container {
+  @apply text-white my-2 mx-auto md:flex items-center justify-between;
+}
+
+.nav-links {
+  @apply transition-all text-[0.7rem]
+  ease-in-out text-white p-3 rounded-2xl
+  drop-shadow-2xl hover:text-blue-300 px-3 py-0;
+}
+
+.nav-login {
+  @apply btn-sm transition-all text-[0.7rem]
+  ease-in-out text-white p-3 rounded-2xl
+  drop-shadow-2xl hover:bg-blue-950 px-3 py-0 active:opacity-5;
+}
+
+.primary-nav {
+  @apply uppercase md:flex items-center space-x-6 pr-16;
+}
+
+.mobile-nav {
+  @apply pb-20 md:hidden absolute left-0 w-full bg-transparent/80;
+}
+
+.dropdown-links {
+  @apply block px-4 py-2 text-sm text-white hover:bg-blue-500;
+}
+/* ################################################################### */

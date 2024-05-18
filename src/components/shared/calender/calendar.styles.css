@@ -1,0 +1,33 @@
+/* ################################################################### */
+/* ################################################################### */
+
+.calendar-adjuster {
+  @apply p-1 h-[48px] md:h-20
+  w-[48px] md:w-24 overflow-hidden
+  hover:bg-gray-300 transition
+  duration-300 ease-in-out;
+}
+
+.calendar-container {
+  @apply bg-gradient-to-r from-war-gray
+  bg-transparent/55 text-white pb-8
+  flex items-center justify-center
+  rounded-2xl cursor-pointer;
+}
+
+.evt-status {
+  @apply bg-purple-400 text-white rounded p-0.5 text-[8px] md:text-xs mb-1;
+}
+
+.responsive-container {
+  @apply bg-blend-saturation
+  rounded-lg shadow-md drop-shadow-2xl
+  w-full md:max-w-xl lg:max-w-2xl mx-auto;
+}
+
+.the-day {
+  @apply text-center
+  rounded-box text-white h-8
+  flex items-center justify-center;
+}
+/* ################################################################### */
