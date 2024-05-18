@@ -13,6 +13,10 @@ export { default as DisplaySVGIcons } from './shared/icons/DisplaySVGIcons.vue';
 export { default as ShowCalendarModal } from './modals/ShowCalendarModal.vue';
 export { default as UpcomingEventsButtonModal } from './modals/UpcomingEventsButtonModal.vue';
 
+/* auth: routes */
+export { default as FormInput } from './auth/FormInputCard.vue';
+export { default as SigninWithButton } from './auth/SigninWithButton.vue';
+
 /* navbar: routes */
 export { default as NavBar } from './navbar/NavBar.vue';
 export { default as Footer } from './footer/Footer.vue';

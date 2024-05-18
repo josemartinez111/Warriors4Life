@@ -19,8 +19,8 @@ type ParallaxImage =
   | string ;
 
 interface LayoutProps {
-  imageClass: ParallaxImage;
-  customClass?: string;
+  imageClass?: ParallaxImage;
+  customClass?: string | Array<string>;
 }
 // ____________________________________________________________________
 

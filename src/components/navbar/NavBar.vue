@@ -31,7 +31,9 @@ const { navLinks, activeTab, mobileMenuOpen, isMobile, toggleMenu } = UseNavBar(
             alt="Logo"
             class="h-8 sm:h-12 md:h-16 mr-2 shadow-inner drop-shadow-2xl"
           />
-          <span class="text-sm sm:text-lg md:text-[1.5rem] uppercase shadow-accent drop-shadow-2xl"> Warriors4Life </span>
+          <span class="text-sm sm:text-lg md:text-[1.5rem] uppercase shadow-accent drop-shadow-2xl">
+            Warriors4Life
+          </span>
         </RouterLink>
         <MenuDropdownIcon :toggle-menu="toggleMenu" />
       </div>
@@ -39,7 +41,13 @@ const { navLinks, activeTab, mobileMenuOpen, isMobile, toggleMenu } = UseNavBar(
       <!-- Desktop NavBar -->
       <div :class="{ flex: !mobileMenuOpen && !isMobile, hidden: mobileMenuOpen || isMobile }" class="primary-nav">
         <template v-for="link in navLinks" :key="link.name">
-          <RouterLink :to="link.to" :class="[link.specialStyle || 'nav-links', { 'tab-active border-2': activeTab === link.name, tab: activeTab !== link.name }]">
+          <RouterLink
+            :to="link.to"
+            :class="[
+              link.specialStyle || 'nav-links',
+              { 'tab-active border-2': activeTab === link.name, tab: activeTab !== link.name },
+            ]"
+          >
             {{ link.name }}
           </RouterLink>
         </template>

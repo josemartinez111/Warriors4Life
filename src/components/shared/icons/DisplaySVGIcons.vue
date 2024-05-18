@@ -8,18 +8,22 @@
 // ################################################################
 import { storeToRefs } from 'pinia';
 import { computed, toRefs } from 'vue';
-import { UseDarkmodeStore } from '../../../stores/UseDarkmodeStore.ts';
+import { UseDarkmodeStore } from '../../../stores';
 // ################################################################
 
 // Define a type with specific allowed strings for the iconName prop.
 type IconName =
-  'twitter' |
-  'youtube' |
-  'facebook' |
-  'linkedin' |
-  'instagram' |
-  'toggledarkmode' |
-  string;
+  | 'twitter'
+  | 'youtube'
+  | 'facebook'
+  | 'linkedin'
+  | 'instagram'
+  | 'google-colored'
+  | 'linkedin-colored'
+  | 'facebook-colored'
+  | 'apple-colored'
+  | 'toggledarkmode'
+  | string;
 
 interface SVGDimensions {
   height?: string;
@@ -29,7 +33,7 @@ interface SVGDimensions {
   isDarkMode?: boolean;
 }
 
-interface SVGProps extends SVGDimensions {
+export interface SVGProps extends SVGDimensions {
   iconName: IconName;
 }
 // ____________________________________________________________________
@@ -38,12 +42,7 @@ const props = withDefaults(defineProps<SVGProps>(), {
   width: '24',
 });
 
-const {
-  iconName,
-  height,
-  width,
-  customClass
-} = toRefs(props);
+const { iconName, height, width, customClass } = toRefs(props);
 
 /*
  * In Vue 3 with Pinia, when you access state directly from the darkmodeStore
@@ -77,8 +76,7 @@ const switchIconColor = computed(() => {
     <!-- twitter icon -->
     <div v-show="passedWithName === 'twitter'">
       <a>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-             viewBox="0 0 24 24" class="fill-current">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current">
           <path
             d="M24 4.557c-.883.392-1.832.656-2.828.775
                 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127
@@ -88,64 +86,60 @@ const switchIconColor = computed(() => {
                 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626
                 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04
                 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721
-                13.995-14.646.962-.695 1.797-1.562 2.457-2.549z">
-          </path>
+                13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+          ></path>
         </svg>
       </a>
     </div>
     <!-- youtube icon -->
     <div v-show="passedWithName === 'youtube'">
       <a>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-             viewBox="0 0 24 24" class="fill-current">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current">
           <path
             d="M19.615 3.184c-3.604-.246-11.631-.245-15.23
             0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484
             8.549 4.385 8.816 3.6.245 11.626.246 15.23
             0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615
-            12.816v-8l8 3.993-8 4.007z">
-          </path>
+            12.816v-8l8 3.993-8 4.007z"
+          ></path>
         </svg>
       </a>
     </div>
     <!-- facebook icon -->
     <div v-show="passedWithName === 'facebook'">
       <a>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-             viewBox="0 0 24 24" class="fill-current">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current">
           <path
             d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333
             1.115-1.333h2.885v-5h-3.808c-3.596
-            0-5.192 1.583-5.192 4.615v3.385z">
-          </path>
+            0-5.192 1.583-5.192 4.615v3.385z"
+          ></path>
         </svg>
       </a>
     </div>
     <!-- linkedin icon -->
     <div v-show="passedWithName === 'linkedin'">
       <a>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-             viewBox="0 0 24 24" class="fill-current">
-        <path
-          d="M12 0c-6.627 0-12 5.373-12 12s5.373
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current">
+          <path
+            d="M12 0c-6.627 0-12 5.373-12 12s5.373
           12 12 12 12-5.373 12-12-5.373-12-12-12zm-2
           16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109
           0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0
           .613-.493 1.109-1.1 1.109zm8
           6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002
           0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736
-          4 1.548v3.359z" />
-      </svg>
+          4 1.548v3.359z"
+          />
+        </svg>
       </a>
     </div>
     <!-- instagram icon -->
     <div v-show="passedWithName === 'instagram'">
       <a>
-        <svg xmlns="http://www.w3.org/2000/svg"
-             width="24" height="24"
-             viewBox="0 0 24 24" class="fill-current">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current">
           <path
-          d="M14.829
+            d="M14.829
           6.302c-.738-.034-.96-.04-2.829-.04s-2.09.007-2.828.04c-1.899.087-2.783.986-2.87
           2.87-.033.738-.041.959-.041 2.828s.008 2.09.041 2.829c.087 1.879.967 2.783 2.87
           2.87.737.033.959.041 2.828.041 1.87 0 2.091-.007 2.829-.041 1.899-.086 2.782-.988
@@ -158,14 +152,86 @@ const switchIconColor = computed(() => {
           14.886c-.115 2.545-1.532 3.955-4.071
           4.072-.747.034-.986.042-2.887.042s-2.139-.008-2.886-.042c-2.544-.117-3.955-1.529-4.072-4.072-.034-.746-.042-.985-.042-2.886
           0-1.901.008-2.139.042-2.886.117-2.544 1.529-3.955 4.072-4.071.747-.035.985-.043 2.886-.043s2.14.008
-          2.887.043c2.545.117 3.957 1.532 4.071 4.071.034.747.042.985.042 2.886 0 1.901-.008 2.14-.042 2.886z" />
+          2.887.043c2.545.117 3.957 1.532 4.071 4.071.034.747.042.985.042 2.886 0 1.901-.008 2.14-.042 2.886z"
+          />
         </svg>
       </a>
     </div>
-    
+
     <!-- #################### LINK-ICONS #################### -->
-    
-    <!-- ###################### ICONS ####################### -->
+    <!-- google-colored icon -->
+    <div v-show="passedWithName === 'google-colored'">
+      <svg class="w-6 mr-16" width="46" height="47" viewBox="0 0 46 47" fill="none">
+        <path
+          d="M46 24.0287C46 22.09 45.8533 20.68 45.5013
+          19.2112H23.4694V27.9356H36.4069C36.1429 30.1094
+          34.7347 33.37 31.5957 35.5731L31.5663 35.8669L38.5191
+          41.2719L38.9885 41.3306C43.4477 37.2181 46 31.1669 46 24.0287Z"
+          fill="#4285F4"
+        ></path>
+        <path
+          d="M23.4694 47C29.8061 47 35.1161 44.9144 39.0179 41.3012L31.625
+          35.5437C29.6301 36.9244 26.9898 37.8937 23.4987 37.8937C17.2793
+          37.8937 12.0281 33.7812 10.1505 28.1412L9.88649 28.1706L2.61097
+          33.7812L2.52296 34.0456C6.36608 41.7125 14.287 47 23.4694 47Z"
+          fill="#34A853"
+        ></path>
+        <path
+          d="M10.1212 28.1413C9.62245 26.6725 9.32908 25.1156 9.32908
+          23.5C9.32908 21.8844 9.62245 20.3275 10.0918 18.8588V18.5356L2.75765
+          12.8369L2.52296 12.9544C0.909439 16.1269 0 19.7106 0 23.5C0 27.2894
+          0.909439 30.8731 2.49362 34.0456L10.1212 28.1413Z"
+          fill="#FBBC05"
+        ></path>
+        <path
+          d="M23.4694 9.07688C27.8699 9.07688 30.8622 10.9863 32.5344 12.5725L39.1645
+          6.11C35.0867 2.32063 29.8061 0 23.4694 0C14.287 0 6.36607 5.2875 2.49362
+          12.9544L10.0918 18.8588C11.9987 13.1894 17.25 9.07688 23.4694 9.07688Z"
+          fill="#EB4335"
+        ></path>
+      </svg>
+    </div>
+    <!-- linkedin-colored icon -->
+    <div v-show="passedWithName === 'linkedin-colored'">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-8 mr-14" width="46" height="47" viewBox="0 0 46 47">
+        <path
+          fill="#0288D1"
+          d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z"
+        ></path>
+        <path
+          fill="#FFF"
+          d="M12 19H17V36H12zM14.485 17h-.028C12.965 17 12 15.888 12 14.499
+          12 13.08 12.995 12 14.514 12c1.521 0 2.458 1.08 2.486 2.499C17
+          15.887 16.035 17 14.485 17zM36 36h-5v-9.099c0-2.198-1.225-3.698-3.192-3.698-1.501
+          0-2.313 1.012-2.707 1.99C24.957 25.543 25 26.511 25 27v9h-5V19h5v2.616C25.721
+          20.5 26.85 19 29.738 19c3.578 0 6.261 2.25 6.261 7.274L36 36 36 36z"
+        ></path>
+      </svg>
+    </div>
+    <!-- facebook-colored icon -->
+    <div v-show="passedWithName === 'facebook-colored'">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-8 mr-12" width="46" height="47" viewBox="0 0 46 47">
+        <path fill="#039be5" d="M24 5A19 19 0 1 0 24 43A19 19 0 1 0 24 5Z"></path>
+        <path
+          fill="#fff"
+          d="M26.572,
+          29.036h4.917l0.772-4.995h-5.69v-2.73c0-2.075,0.678-3.915,
+          2.619-3.915h3.119v-4.359c-0.548-0.074-1.707-0.236-3.897-0.236c-4.573,
+          0-7.254,2.415-7.254,7.917v3.323h-4.701v4.995h4.701v13.729C22.089,
+          42.905,23.032,43,24,43c0.875,0,1.729-0.08,2.572-0.194V29.036z"
+        ></path>
+      </svg>
+    </div>
+    <!-- apple-colored icon -->
+    <div v-show="passedWithName === 'apple-colored'">
+      <svg xmlns="http://www.w3.org/2000/svg" width="46" height="47" class="w-8 mr-16" viewBox="0,0,350,270"
+           style="fill:#FFFFFF;">
+<g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(10.66667,10.66667)"><path d="M16.125,1c-1.153,0.067 -2.47667,0.70934 -3.26367,1.52734c-0.711,0.744 -1.27197,1.84897 -1.04297,2.91797c1.253,0.033 2.51067,-0.62598 3.26367,-1.45898c0.703,-0.779 1.23597,-1.86633 1.04297,-2.98633zM16.19336,5.44336c-1.809,0 -2.56536,1.11133 -3.81836,1.11133c-1.289,0 -2.46734,-1.04102 -4.02734,-1.04102c-2.122,0.001 -5.34766,1.96666 -5.34766,6.59766c0,4.213 3.81766,8.88867 5.97266,8.88867c1.309,0.013 1.62634,-0.82303 3.40234,-0.83203c1.778,-0.013 2.16166,0.84303 3.47266,0.83203c1.476,-0.011 2.6287,-1.63297 3.4707,-2.91797c0.604,-0.92 0.85231,-1.38969 1.32031,-2.42969c-3.473,-0.88 -4.164,-6.48067 0,-7.63867c-0.786,-1.341 -3.08031,-2.57031 -4.44531,-2.57031z"></path></g></g>
+</svg>
+    </div>
+    <!-- #################### LINK-ICONS #################### -->
+
+    <!-- ###################### ICONS WITH LABELS ####################### -->
     <!-- facebook icon -->
     <div v-show="passedWithName === 'toggledarkmode'">
       <div>
@@ -180,7 +246,7 @@ const switchIconColor = computed(() => {
             :checked="isDarkMode"
             @change="store.toggleDarkMode()"
           />
-            <!-- SUN-SVG -->
+          <!-- SUN-SVG -->
           <svg
             class="col-start-1 row-start-1 stroke-base-100 fill-base-100"
             xmlns="http://www.w3.org/2000/svg"
@@ -191,14 +257,16 @@ const switchIconColor = computed(() => {
             stroke="currentColor"
             stroke-width="2"
             stroke-linecap="round"
-            stroke-linejoin="round">
+            stroke-linejoin="round"
+          >
             <circle cx="12" cy="12" r="5" />
             <path
               d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4
             18.4l1.4 1.4M1 12h2M21 12h2M4.2
-            19.8l1.4-1.4M18.4 5.6l1.4-1.4" />
+            19.8l1.4-1.4M18.4 5.6l1.4-1.4"
+            />
           </svg>
-            <!-- MOON-SVG -->
+          <!-- MOON-SVG -->
           <svg
             class="col-start-2 row-start-1 stroke-base-100 fill-base-100"
             xmlns="http://www.w3.org/2000/svg"
@@ -209,13 +277,13 @@ const switchIconColor = computed(() => {
             stroke="currentColor"
             stroke-width="2"
             stroke-linecap="round"
-            stroke-linejoin="round">
+            stroke-linejoin="round"
+          >
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
           </svg>
         </label>
       </div>
     </div>
-    
   </div>
 </template>
 <!-- --------------------------------------------------------
@@ -226,6 +294,5 @@ const switchIconColor = computed(() => {
 /* ---------------------------- IMPORTS ------------------------------ */
 
 /* ################################################################### */
-
 </style>
 <!-- ---------------------------------------------------- -->
