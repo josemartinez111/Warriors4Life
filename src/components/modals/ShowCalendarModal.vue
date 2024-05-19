@@ -24,9 +24,7 @@ function closeModal() {
 }
 
 const isOpenCallback = (newVal: boolean) => {
-  (newVal)
-    ? modal.value?.showModal()
-    : modal.value?.close();
+  newVal ? modal.value?.showModal() : modal.value?.close();
 };
 
 // Function to close the modal if the click is outside the content area
@@ -45,22 +43,26 @@ onMounted(() => {
 <!-- --------------------------------------------------------
                      <>MARKUP</>
 --------------------------------------------------------- -->
+
 <template>
   <dialog ref="modal" class="modal">
-      <div class="modal-box w-8/12 max-w-4xl shadow-transparent pb-11" @click.stop>
-        <!-- Close button -->
-        <div class="modal-backdrop">
-          <W4LButton
-            custom-class="text-white btn-md rounded-2xl uppercase"
-            @click="closeModal"
-          >Close Calendar
-          </W4LButton>
-        </div>
-        
-        <h3 class="font-bold text-4xl pb-11 pt-5">Scheduled Events</h3>
+    <div
+      class="modal-box w-full sm:w-10/12 md:w-8/12 lg:w-6/12 xl:max-w-4xl shadow-transparent pb-11 mx-auto max-h-[90vh] overflow-y-auto"
+      @click.stop
+    >
+      <!-- Close button -->
+      <div class="modal-backdrop flex justify-center sm:justify-end">
+        <W4LButton custom-class="text-white btn-md rounded-2xl uppercase mt-4 sm:mt-0" @click="closeModal">
+          Close Calendar
+        </W4LButton>
+      </div>
+
+      <h3 class="font-bold text-2xl sm:text-3xl md:text-4xl pb-11 pt-5 text-center">Scheduled Events</h3>
+      <div class="overflow-x-auto">
         <W4LCalender />
       </div>
-    </dialog>
+    </div>
+  </dialog>
 </template>
 <!-- --------------------------------------------------------
                             STYLES
@@ -70,6 +72,5 @@ onMounted(() => {
 /* ---------------------------- IMPORTS ------------------------------ */
 
 /* ################################################################### */
-
 </style>
 <!-- ---------------------------------------------------- -->

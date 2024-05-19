@@ -9,7 +9,7 @@ import { storeToRefs } from 'pinia';
 
 // ################################################################
 import { W4LButton, W4LImage } from '../../index.ts';
-import { UseDarkmodeStore } from '../../../stores/UseDarkmodeStore.ts';
+import { UseDarkmodeStore } from '../../../stores';
 import JosePhotoShoot from '../../../assets/images/jose-photo-shoot.jpg';
 import CamoImage from '../../../assets/images/camo-image.png';
 // ################################################################
@@ -22,43 +22,36 @@ const { isDarkMode } = storeToRefs(store);
 --------------------------------------------------------- -->
 
 <template>
-  <!--
-  :style="{
-      backgroundImage: isDarkMode ? `url(${CamoImage})` : 'none',
-      backgroundColor: isDarkMode ? 'transparent' : '#fff'
-    }"
-    
-    :class="[`${isDarkMode ? 'bg-great-gray' : 'bg-white'}`, 'hero min-h-[75vh] drop-shadow-2xl max-w-none z-10']"
-  -->
   <div
     class="hero min-h-[75vh] drop-shadow-2xl max-w-none z-10"
     :style="{
       backgroundImage: isDarkMode ? `url(${CamoImage})` : 'none',
-      backgroundColor: isDarkMode ? 'transparent' : '#fff'
+      backgroundColor: isDarkMode ? 'transparent' : '#fff',
     }"
   >
-  <div class="hero-content flex-col lg:flex-row">
-    <!-- Custom image component -->
-    <W4LImage :img-url="JosePhotoShoot" />
-    <div>
-      <h1
-        :class="[`${isDarkMode ? 'text-white' : 'text-blue-950'}`, 'text-7xl lg:text-7xl font-bold drop-shadow-lg']"
-      >WARRIORS 4 LIFE
-      </h1>
-      <p
-        :class="[`${isDarkMode ? 'text-white' : 'text-blue-950'}`, 'text-blue-950 text-sm lg:text-base py-4 lg:py-6']">
-        Recovery through a healthy lifestyle, self-awareness, and empowerment.
-      </p>
-      
-      <div :class="`${isDarkMode ? 'text-white' : 'text-blue-950'}`">
-        <W4LButton custom-class="font-bold btn-md rounded-[8px] px-16 uppercase hover:text-white">
-          Support Us
-        </W4LButton>
+    <div class="hero-content flex flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-start">
+      <!-- Custom image component -->
+      <W4LImage :img-url="JosePhotoShoot" class="w-full lg:w-1/2 max-w-xs lg:max-w-none" />
+      <div class="text-center lg:text-left mt-6 lg:mt-0 lg:ml-6 flex flex-col items-center lg:items-start">
+        <h1
+          :class="[
+            `${isDarkMode ? 'text-white' : 'text-blue-950'}`,
+            'text-4xl md:text-5xl lg:text-7xl font-bold drop-shadow-lg',
+          ]"
+        >
+          WARRIORS 4 LIFE
+        </h1>
+        <p :class="[`${isDarkMode ? 'text-white' : 'text-blue-950'}`, 'text-sm md:text-base lg:text-lg py-4 lg:py-6']">
+          Recovery through a healthy lifestyle, self-awareness, and empowerment.
+        </p>
+        <div :class="[`${isDarkMode ? 'text-white' : 'text-blue-950'}`, 'w-full flex justify-center lg:justify-start']">
+          <W4LButton custom-class="font-bold btn-md rounded-[8px] w-full sm:w-auto px-10 lg:px-28 uppercase hover:text-white mt-4 lg:mt-0">
+            Support Us
+          </W4LButton>
+        </div>
       </div>
-      
     </div>
   </div>
-</div>
 </template>
 <!-- --------------------------------------------------------
                             STYLES
@@ -68,6 +61,5 @@ const { isDarkMode } = storeToRefs(store);
 /* ---------------------------- IMPORTS ------------------------------ */
 
 /* ################################################################### */
-
 </style>
 <!-- ---------------------------------------------------- -->
