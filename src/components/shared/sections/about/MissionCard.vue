@@ -7,7 +7,7 @@
 <script setup lang="ts">
 // ################################################################
 import { computed } from 'vue';
-import { UseColorStore } from '../../../../stores/UseColorStore.ts';
+import { UseColorStore } from '../../../../stores';
 import twoWarriors from '../../../../assets/images/twoWarriors.jpg';
 import neverForget from '../../../../assets/images/never-forget.jpg';
 import theSquad from '../../../../assets/images/the-squad.jpg';
@@ -76,24 +76,26 @@ const computedItems = computed(() => {
 --------------------------------------------------------- -->
 <template>
   <div :class="[`${colorStore.dreamBlue}`, 'w-full min-w-36 mx-auto text-white']">
-    <div class="flex grid-cols-1 space-x-16 p-24 gap-5 lg:grid-cols-4 sm:grid-cols-2">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 p-8 sm:p-16 lg:p-24">
       <!-- Using computed property to handle the background images -->
       <div v-for="item in computedItems" :key="item.id"
-           class="relative rounded-3xl text-white shadow-inner flex items-end  justify-start w-full text-left dark:bg-gray-500 bg-cover bg-center h-96"
-           >
-        <div class="absolute rounded-3xl inset-0 drop-shadow-2xl brightness-50"
-             :style="item.style"></div>
-        <div class="absolute top-0 left-0 right-0 flex items-center justify-between mx-5 mt-3">
-          <span class="px-3 py-2 text-xs font-semibold tracking-wider uppercase dark:bg-rose-800">
+           class="relative rounded-3xl text-white shadow-inner flex items-end justify-start w-full text-left dark:bg-gray-500 bg-cover bg-center h-72 sm:h-80 md:h-96">
+        <div class="absolute rounded-3xl inset-0 drop-shadow-2xl brightness-50" :style="item.style"></div>
+        <div class="absolute top-0 left-0 right-0 flex items-center justify-between mx-3 sm:mx-5 mt-3">
+          <span class="px-2 sm:px-3 py-1 sm:py-2 text-xs font-semibold tracking-wider uppercase dark:bg-rose-800">
             {{ item.title }}
           </span>
           <div class="flex flex-col justify-start text-center text-white">
-            <span class="text-3xl font-semibold leading-none tracking-wide">{{ item.date.day }}</span>
-            <span class="leading-none uppercase">{{ item.date.month }}</span>
+            <span class="text-lg sm:text-xl md:text-2xl font-semibold leading-none tracking-wide">
+              {{ item.date.day }}
+            </span>
+            <span class="text-xs sm:text-sm md:text-base leading-none uppercase">
+              {{ item.date.month }}
+            </span>
           </div>
         </div>
-        <h2 class="z-10 p-5">
-          <span class="text-sm text-md text-blue-200 brightness-200 drop-shadow-2xl z-10 shadow-base-300">
+        <h2 class="z-10 p-4 sm:p-5">
+          <span class="text-xs sm:text-sm md:text-md text-blue-200 brightness-200 drop-shadow-2xl z-10 shadow-base-300">
             {{ item.description }}
           </span>
         </h2>

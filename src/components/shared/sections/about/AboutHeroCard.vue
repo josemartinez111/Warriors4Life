@@ -34,18 +34,16 @@ debounceStore.setScrollHandler(() => {
     <div
       :class="[`${colorStore.dreamBlue}`, 'absolute inset-0 bg-gradient-to-r from-blue-950 to-transparent/70']"
     ></div>
-
+    
     <!-- Content container with padding but no max width constraint -->
-    <div v-once class="w-full px-4 py-24 sm:px-6 z-10 lg:px-8 flex justify-center">
-      <div
-        class="text-center ltr:sm:text-left leading-loose rtl:sm:text-right space-y-8 w-full md:w-7/12 px-4 mr-auto ml-auto"
-      >
-        <h1 class="text-3xl uppercase font-extrabold sm:text-5xl">
+    <div class="w-full px-4 py-24 sm:px-6 z-10 lg:px-8 flex justify-center">
+      <div class="text-center sm:text-left leading-loose rtl:sm:text-right space-y-8 w-full md:w-10/12 lg:w-7/12 px-4 mr-auto ml-auto">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl uppercase font-extrabold">
           Mission <span class="text-blue-800">Vision</span>
           <strong class="block font-extrabold text-rose-700">Purpose.</strong>
         </h1>
 
-        <p class="text-center sm:text-xl max-w-full">
+        <p class="text-sm sm:text-base md:text-xl max-w-full">
           <span class="text-rose-500">Empowering Our Nation's Heroes —</span>
           At <span class="text-blue-700">Warriors 4 Life</span>, we're dedicated to supporting wounded service members
           and their families through health, wellness, and community support. Our mission is to
@@ -53,7 +51,9 @@ debounceStore.setScrollHandler(() => {
           ensuring they receive the respect and resources they deserve. Join us in making a significant impact.
         </p>
         <!-- Support Us button -->
-        <W4LButton custom-class="w4l-btn"> Support Us </W4LButton>
+        <div class="flex justify-center sm:align-middle">
+          <W4LButton custom-class="w4l-btn">Support Us</W4LButton>
+        </div>
       </div>
     </div>
   </section>
