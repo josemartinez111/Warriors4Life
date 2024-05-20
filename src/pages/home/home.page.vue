@@ -42,7 +42,7 @@ function showCalendar() {
       <div class="text-white pt-24 pb-24">
         <SectionsContainer
           section-header="Up Coming Events"
-          paragraph="Join us in at future events with our warriors,
+          paragraph="Join us at future events with our warriors,
           to get to know what we are all about."
           :img=RookiesStadium
         >

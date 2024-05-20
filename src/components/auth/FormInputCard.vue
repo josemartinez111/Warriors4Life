@@ -70,7 +70,9 @@ const formFields = ref<FormField[]>([
         <!-- Card -->
         <div class="p-4 sm:p-6 md:p-7 flex flex-col rounded-2xl shadow-lg dark:bg-neutral-900">
           <div class="text-center">
-            <h1 class="block text-lg sm:text-xl md:text-2xl font-bold text-gray-800 dark:text-white">Start your free trial</h1>
+            <h1 class="block text-lg sm:text-xl md:text-2xl font-bold text-gray-800 dark:text-white"
+              >Start your free trial</h1
+            >
             <p class="mt-2 text-xs sm:text-sm text-gray-600 dark:text-neutral-400">
               Already have an account?
               <a class="text-blue-600 decoration-2 hover:underline font-medium dark:text-blue-500" href="#">
@@ -81,51 +83,53 @@ const formFields = ref<FormField[]>([
 
           <div class="mt-4 sm:mt-5">
             <!-- Signin With Buttons -->
-            <div class="space-y-2">
+            <div class="space-y-1">
               <SigninWithButton icon-name="google-colored" custom-class="flex items-center justify-center">
                 <span class="flex items-center w-full">
-                  <span class="pl-1 sm:pl-2 flex-shrink-0">
-                    <svg class="h-4 w-4 sm:h-5 sm:w-5" viewBox="0 0 48 48">
-                      <!-- Google Icon SVG content -->
-                    </svg>
+                  <span class="flex-shrink-0">
+                    <!-- Google Icon SVG content -->
+                    <svg class="h-4 w-4 sm:h-5 sm:w-5 pl-8" viewBox="0 0 48 48"></svg>
                   </span>
-                  <span class="flex-grow text-center pr-1 sm:pr-4 text-xs sm:text-sm truncate">Sign in with Google</span>
+                  <span class="flex-grow sm:pr-4 text-center items-center text-xs sm:text-sm truncate">
+                    Sign in with Google
+                  </span>
                 </span>
               </SigninWithButton>
-              <SigninWithButton icon-name="linkedin-colored" custom-class="flex items-center justify-center">
+              <SigninWithButton icon-name="linkedin-colored" custom-class="items-center justify-center">
                 <span class="flex items-center w-full">
-                  <span class="pl-1 sm:pl-2 flex-shrink-0">
-                    <svg class="h-4 w-4 sm:h-5 sm:w-5" viewBox="0 0 48 48">
-                      <!-- LinkedIn Icon SVG content -->
-                    </svg>
+                  <span class="flex-shrink-0">
+                    <!-- LinkedIn Icon SVG content -->
+                    <svg class="h-4 w-4 sm:h-3 sm:w-3" viewBox="0 0 48 48"></svg>
                   </span>
-                  <span class="flex-grow text-center pr-1 sm:pr-4 text-xs sm:text-sm truncate">Sign in with LinkedIn</span>
+                  <span class="flex-grow text-center items-center pl-1 sm:pr-4 text-xs sm:text-sm truncate"
+                    >Sign in with LinkedIn</span
+                  >
                 </span>
               </SigninWithButton>
               <SigninWithButton icon-name="facebook-colored" custom-class="flex items-center justify-center">
                 <span class="flex items-center w-full">
                   <span class="pl-1 sm:pl-2 flex-shrink-0">
-                    <svg class="h-4 w-4 sm:h-5 sm:w-5" viewBox="0 0 48 48">
-                      <!-- Facebook Icon SVG content -->
-                    </svg>
+                    <!-- Facebook Icon SVG content -->
+                    <svg class="h-4 w-4 sm:h-5 sm:w-5" viewBox="0 0 48 48"></svg>
                   </span>
-                  <span class="flex-grow text-center pr-1 sm:pr-4 text-xs sm:text-sm truncate">Sign in with Facebook</span>
+                  <span class="flex-grow text-center  pr-1 sm:pr-4 text-xs sm:text-sm truncate"
+                    >Sign in with Facebook</span
+                  >
                 </span>
               </SigninWithButton>
               <SigninWithButton icon-name="apple-colored" custom-class="flex items-center justify-center">
                 <span class="flex items-center w-full">
                   <span class="pl-1 sm:pl-2 flex-shrink-0">
-                    <svg class="h-4 w-4 sm:h-5 sm:w-5" viewBox="0 0 48 48">
-                      <!-- Apple Icon SVG content -->
-                    </svg>
+                    <!-- Apple Icon SVG content -->
+                    <svg class="h-4 w-4 sm:h-5 sm:w-5" viewBox="0 0 48 48"></svg>
                   </span>
-                  <span class="flex-grow text-center pr-1 sm:pr-4 text-xs sm:text-sm truncate">Sign in with Apple</span>
+                  <span class="flex-grow text-center pr-16 sm:pr-4 text-xs sm:text-sm truncate">Sign in with Apple</span>
                 </span>
               </SigninWithButton>
             </div>
 
             <div class="or-container mt-4 sm:mt-5"> Or </div>
-            
+
             <!-- Grid -->
             <div class="grid grid-cols-2 gap-2 sm:gap-4">
               <div v-for="field in formFields" :key="field.id" :class="{ 'col-span-full': field.isFullSpan }">
@@ -145,7 +149,7 @@ const formFields = ref<FormField[]>([
               </div>
             </div>
             <!-- End Grid -->
-            
+
             <!-- Checkbox -->
             <div class="mt-4 sm:mt-5 flex items-center">
               <div class="flex">
@@ -173,7 +177,6 @@ const formFields = ref<FormField[]>([
     <!-- End Form -->
   </div>
 </template>
-
 
 <!-- --------------------------------------------------------
                             STYLES

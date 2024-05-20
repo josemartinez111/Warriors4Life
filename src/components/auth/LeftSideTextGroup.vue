@@ -1,54 +1,45 @@
 <!-- ********************************************************
-                components/auth/SigninWithButton.vue
+                       COMPONENT_PATH
 ********************************************************* -->
 <!-- --------------------------------------------------------
                         SCRIPT-SETUP
 --------------------------------------------------------- -->
 <script setup lang="ts">
 // ################################################################
-import { toRefs } from 'vue';
-import DisplaySVGIcons, {
-  SVGProps,
-} from '../shared/icons/DisplaySVGIcons.vue';
+
 // ################################################################
-
-const props = defineProps<{
-  iconName: SVGProps['iconName'];
-  customClass?: string | Array<string>;
-}>();
-
-const { iconName } = toRefs(props);
 </script>
 <!-- --------------------------------------------------------
                      <>MARKUP</>
 --------------------------------------------------------- -->
 <template>
-  <button
-    type="button"
-    class="sign-in-with-btn"
-  >
-    <DisplaySVGIcons :icon-name="iconName" />
-    <span :class="`${customClass}`">
-      <!-- children -->
-      <slot />
-    </span>
-  </button>
+  <div>
+    <p
+      class="inline-block text-sm font-medium bg-clip-text bg-gradient-to-l from-blue-600 to-violet-500 text-transparent dark:from-blue-400 dark:to-violet-400"
+    >
+      Preline: A vision for 2024
+    </p>
+
+    <!-- Title -->
+    <div class="mt-4 md:mb-12 max-w-2xl">
+      <h1 class="mb-4 font-semibold text-gray-800 text-4xl lg:text-5xl dark:text-neutral-content">
+        Fully customizable rules to match your unique needs
+      </h1>
+      <p class="text-gray-600 dark:text-neutral-400">
+        We provide you with a test account that can be set up in seconds. Our main focus is getting responses to you as
+        soon as we can.
+      </p>
+    </div>
+    <!-- End Title -->
+  </div>
 </template>
 <!-- --------------------------------------------------------
                             STYLES
 --------------------------------------------------------- -->
-<style scoped lang="postcss">
+<style scoped>
 /* ################################################################### */
 /* ---------------------------- IMPORTS ------------------------------ */
 
 /* ################################################################### */
-
-.sign-in-with-btn {
-  @apply w-full pl-8 py-1 inline-flex items-center
-  text-sm font-medium rounded-lg border border-gray-200
-  bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50
-  disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700
-  dark:text-white dark:hover:bg-neutral-800;
-}
 </style>
 <!-- ---------------------------------------------------- -->
