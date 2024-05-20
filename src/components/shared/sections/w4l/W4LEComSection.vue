@@ -19,7 +19,7 @@ import W4LButton from '../../buttons/W4LButton.vue';
   >
     <!-- Container to hold the card and ensure it does not get squeezed -->
     <div class="flex-grow w-full lg:w-auto lg:pl-32">
-      <div class="card w-full lg:w-96 bg-base-100 dark:bg-base-100 shadow-lg drop-shadow-2xl">
+      <div class="card w-full lg:w-96 bg-base-100 shadow-lg drop-shadow-2xl">
         <!-- Image -->
         <figure>
           <img :src="neverForgotten" alt="Never Forgotten" class="w-full" />
