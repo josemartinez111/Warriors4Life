@@ -76,10 +76,10 @@ const computedItems = computed(() => {
 --------------------------------------------------------- -->
 <template>
   <div :class="[`${colorStore.dreamBlue}`, 'w-full min-w-36 mx-auto text-white']">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 p-8 sm:p-16 lg:p-24">
+    <div class="flex flex-wrap justify-center gap-8 lg:gap-24 p-8 sm:p-16 lg:p-24">
       <!-- Using computed property to handle the background images -->
       <div v-for="item in computedItems" :key="item.id"
-           class="relative rounded-3xl text-white shadow-inner flex items-end justify-start w-full text-left dark:bg-gray-500 bg-cover bg-center h-72 sm:h-80 md:h-96">
+           class="relative rounded-3xl text-white shadow-inner flex items-end justify-start w-full sm:w-5/12 lg:w-1/4 text-left dark:bg-gray-500 bg-cover bg-center h-72 sm:h-80 md:h-96">
         <div class="absolute rounded-3xl inset-0 drop-shadow-2xl brightness-50" :style="item.style"></div>
         <div class="absolute top-0 left-0 right-0 flex items-center justify-between mx-3 sm:mx-5 mt-3">
           <span class="px-2 sm:px-3 py-1 sm:py-2 text-xs font-semibold tracking-wider uppercase dark:bg-rose-800">
@@ -103,6 +103,9 @@ const computedItems = computed(() => {
     </div>
   </div>
 </template>
+
+
+
 <!-- --------------------------------------------------------
                             STYLES
 --------------------------------------------------------- -->
