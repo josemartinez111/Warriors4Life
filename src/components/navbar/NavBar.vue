@@ -9,7 +9,7 @@
 // ################################################################
 import logo from '../../assets/images/warriors4Life-no-bg.png';
 import { UseNavBar } from '../../composables/UseNavBar.ts';
-import { MenuDropdownIcon, UpcomingEventsButtonModal, W4LCalender, W4LButton } from '../index';
+import { MenuDropdownIcon, UpcomingEventsButtonModal, W4LCalender, W4LButton, DisplaySVGIcons } from '../index';
 // ################################################################
 
 const { navLinks, activeTab, mobileMenuOpen, isMobile, toggleMenu } = UseNavBar();
@@ -64,6 +64,12 @@ const { navLinks, activeTab, mobileMenuOpen, isMobile, toggleMenu } = UseNavBar(
           </RouterLink>
         </template>
         <W4LButton @click="toggleMenu">Close</W4LButton>
+        <!-- Dark mode SVG -->
+        <DisplaySVGIcons
+          icon-name="toggledarkmode"
+          height="28" width="28"
+          customClass="pl-10 cursor-pointer"
+        />
       </div>
     </nav>
   </header>

@@ -62,15 +62,6 @@ function showCalendar() {
     
       <!-- Commerce Component -->
       <W4LEComSection />
-      
-      <!--<p class="text-2xl">Welcome to our platform...</p>-->
-      <!--<div v-for="n in 10" :key="n" class="text-xl p-4"> &lt;!&ndash; Increased to 100 items &ndash;&gt;-->
-      <!--  <p>-->
-      <!--    More detailed paragraph of text #{n}. Here's some additional-->
-      <!--     information to make this scroll more extensive and show how content-->
-      <!--    flows over the parallax background.-->
-      <!--  </p>-->
-      <!--</div>-->
       </div>
     </main>
   </Layout>
