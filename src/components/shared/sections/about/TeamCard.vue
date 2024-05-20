@@ -62,7 +62,7 @@ const teamMembers = reactive<TeamMember[]>([
 -->
 <template>
   <section id="our-team" :class="[`${isDarkMode ? `${colorStore.dreamBlue}` : 'bg-gray-100'}`, 'py-32']">
-    <div class="container mx-auto px-4">
+    <div class="container px-4">
       <h2 :class="[ `${isDarkMode ? 'text-white' : ''}`, 'text-5xl font-bold text-center mb-8 text-blue-950 uppercase']">
         Meet Our Team
       </h2>
@@ -70,7 +70,7 @@ const teamMembers = reactive<TeamMember[]>([
         <div
           v-for="member in teamMembers"
           :key="member.id"
-          :class="[`${isDarkMode ? `${colorStore.dreamBlue} text-white` : 'bg-white'}`, 'rounded-lg shadow-md p-6 my-6 text-center']">
+          :class="[`${isDarkMode ? `${colorStore.dreamBlue} text-white` : 'bg-white'}`, 'rounded-lg shadow-md p-6 my-6 space-x-14 text-center']">
           <img :src="member.image" :alt="member.name"
                class="w-full rounded-full mb-4">
           <h3 class="text-xl font-semibold mb-2">{{ member.name }}</h3>
