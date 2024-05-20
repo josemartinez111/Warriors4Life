@@ -39,7 +39,9 @@ const { isDarkMode } = storeToRefs(store);
     <div :class="[`${isDarkMode ? 'dark:bg-jet-gray' : props.imageClass}`, props.customClass, 'parallax-container']" />
     <div class="content-container">
       <!-- children-slot -->
-      <slot></slot>
+      <section>
+        <slot></slot>
+      </section>
     </div>
     <!-- Floating Button -->
     <W4LFloatingButton />

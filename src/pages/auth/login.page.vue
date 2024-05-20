@@ -1,5 +1,5 @@
 <!-- ********************************************************
-             pages/auth/registerNowLogin.page.vue
+             pages/auth/login.page.vue
 ********************************************************* -->
 <!-- --------------------------------------------------------
                         SCRIPT-SETUP
@@ -28,7 +28,7 @@ import Layout from '../../components/Layout.vue';
             >
               Preline: A vision for 2024
             </p>
-
+            
             <!-- Title -->
             <div class="mt-4 md:mb-12 max-w-2xl">
               <h1 class="mb-4 font-semibold text-gray-800 text-4xl lg:text-5xl dark:text-neutral-200">
@@ -40,7 +40,7 @@ import Layout from '../../components/Layout.vue';
               </p>
             </div>
             <!-- End Title -->
-
+            
             <!-- Blockquote -->
             <blockquote class="hidden md:block relative max-w-sm">
               <svg
@@ -93,6 +93,7 @@ import Layout from '../../components/Layout.vue';
   </Layout>
   <!-- End Hero -->
 </template>
+
 <!-- --------------------------------------------------------
                             STYLES
 --------------------------------------------------------- -->
