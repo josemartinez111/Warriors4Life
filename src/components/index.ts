@@ -16,6 +16,7 @@ export { default as UpcomingEventsButtonModal } from './modals/UpcomingEventsBut
 /* auth: routes */
 export { default as FormInput } from './auth/FormInputCard.vue';
 export { default as SigninWithButton } from './auth/SigninWithButton.vue';
+export { default as LeftSideTextGroup } from './auth/LeftSideTextGroup.vue';
 
 /* navbar: routes */
 export { default as NavBar } from './navbar/NavBar.vue';
