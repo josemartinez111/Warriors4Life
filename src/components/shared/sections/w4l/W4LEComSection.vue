@@ -19,13 +19,13 @@ import W4LButton from '../../buttons/W4LButton.vue';
   >
     <!-- Container to hold the card and ensure it does not get squeezed -->
     <div class="flex-grow w-full lg:w-auto lg:pl-32">
-      <div class="card w-full lg:w-96 bg-base-100 shadow-lg drop-shadow-2xl">
+      <div class="card w-full lg:w-96 shadow-lg drop-shadow-2xl">
         <!-- Image -->
         <figure>
           <img :src="neverForgotten" alt="Never Forgotten" class="w-full" />
         </figure>
 
-        <div class="card-body items-center text-center">
+        <div class="card-body bg-base-100 items-center text-center">
           <h2 class="card-title">
             Warriors 4 Life Apparel
             <span class="badge badge-secondary">NEW</span>
