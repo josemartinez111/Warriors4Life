@@ -1,5 +1,5 @@
 <!-- ********************************************************
-                component/shared/W4LHeroCard.vue
+     component/shared/page-sections/HomeHeroSection.vue
 ********************************************************* -->
 <!-- --------------------------------------------------------
                         SCRIPT-SETUP
@@ -8,10 +8,10 @@
 import { storeToRefs } from 'pinia';
 
 // ################################################################
-import { W4LButton, W4LImage } from '../../index.ts';
-import { UseDarkmodeStore } from '../../../stores';
-import JosePhotoShoot from '../../../assets/images/jose-photo-shoot.jpg';
-import CamoImage from '../../../assets/images/camo-image.png';
+import { W4LButton, W4LImage } from '../../../index.ts';
+import { UseDarkmodeStore } from '../../../../stores';
+import JosePhotoShoot from '../../../../assets/images/jose-photo-shoot.jpg';
+import CamoImage from '../../../../assets/images/camo-image.png';
 // ################################################################
 
 const store = UseDarkmodeStore();

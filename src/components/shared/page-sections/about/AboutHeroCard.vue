@@ -1,5 +1,5 @@
 <!-- ********************************************************
-       components/shared/sections/about/AboutHeroCard.vue
+       components/shared/page-sections/about/AboutHeroCard.vue
 ********************************************************* -->
 <!-- --------------------------------------------------------
                         SCRIPT-SETUP

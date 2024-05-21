@@ -1,5 +1,5 @@
 <!-- ********************************************************
-        component/shared/sections/SectionsContainer.vue
+        component/shared/page-sections/SectionsContainer.vue
 ********************************************************* -->
 <!-- --------------------------------------------------------
                         SCRIPT-SETUP

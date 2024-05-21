@@ -49,7 +49,7 @@ const buttonClass = computed(() => [
 
 /* ################################################################### */
 
-/* .w4l-btn {
+/* .home-btn {
   @apply btn btn-sm btn-ghost ml-2
   btn-active drop-shadow-2xl
   transition-all ease-in-out
