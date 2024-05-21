@@ -1,5 +1,5 @@
 <!-- ********************************************************
-       components/shared/sections/about/MissionCard.vue
+       components/shared/page-sections/about/MissionCard.vue
 ********************************************************* -->
 <!-- --------------------------------------------------------
                         SCRIPT-SETUP

@@ -47,30 +47,32 @@ onMounted(() => {
 <template>
   <dialog ref="modal" class="modal">
     <div
-      class="modal-box w-full sm:w-10/12 md:w-8/12 lg:w-6/12 xl:max-w-4xl shadow-transparent pb-11 mx-auto max-h-[90vh] overflow-y-auto"
+      class="modal-box modal-container"
       @click.stop
     >
       <!-- Close button -->
       <div class="modal-backdrop flex justify-center sm:justify-end">
-        <W4LButton custom-class="text-white btn-md rounded-2xl uppercase mt-4 sm:mt-0" @click="closeModal">
-          Close Calendar
+        <W4LButton custom-class="text-white btn-md w-full rounded-2xl uppercase mt-4 sm:mt-0" @click="closeModal">
+          <slot name="close-btn-name"></slot>
         </W4LButton>
       </div>
-
-      <h3 class="font-bold text-2xl sm:text-3xl md:text-4xl pb-11 pt-5 text-center">Scheduled Events</h3>
-      <div class="overflow-x-auto">
-        <W4LCalender />
-      </div>
+      <slot name="children"></slot>
     </div>
   </dialog>
 </template>
 <!-- --------------------------------------------------------
                             STYLES
 --------------------------------------------------------- -->
-<style scoped>
+<style scoped lang="postcss">
 /* ################################################################### */
 /* ---------------------------- IMPORTS ------------------------------ */
 
 /* ################################################################### */
+
+.modal-container {
+  @apply w-full sm:w-10/12 md:w-8/12
+  lg:w-6/12 xl:max-w-4xl shadow-transparent
+  pb-11 mx-auto max-h-[90vh] overflow-y-auto;
+}
 </style>
 <!-- ---------------------------------------------------- -->

@@ -5,10 +5,9 @@
                         SCRIPT-SETUP
 --------------------------------------------------------- -->
 <script setup lang="ts">
-import { FormInput, LeftSideTextGroup } from '../../components';
-
 // ################################################################
 import Layout from '../../components/Layout.vue';
+import { FormInput, LeftSideTextGroup } from '../../components';
 // ################################################################
 </script>
 <!-- --------------------------------------------------------
@@ -25,14 +24,10 @@ import Layout from '../../components/Layout.vue';
           <LeftSideTextGroup />
           <!-- Form Input component -->
           <FormInput />
-          <!-- End Col -->
         </div>
-        <!-- End Grid -->
       </div>
-      <!-- End Clients Section -->
     </div>
   </Layout>
-  <!-- End Hero -->
 </template>
 
 <!-- --------------------------------------------------------

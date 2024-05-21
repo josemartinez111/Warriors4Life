@@ -1,5 +1,5 @@
 <!-- ********************************************************
-     components/shared/sections/about/OurJourneyCard.vue
+     components/shared/page-sections/about/OurJourneyCard.vue
 ********************************************************* -->
 <!-- --------------------------------------------------------
                         SCRIPT-SETUP

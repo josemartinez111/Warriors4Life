@@ -26,14 +26,14 @@ export { default as Footer } from './footer/Footer.vue';
 export { default as W4LButton } from './shared/buttons/W4LButton.vue';
 export { default as W4LFloatingButton } from './shared/buttons/W4LFloatingButton.vue';
 export { default as W4LCalender } from './shared/calender/W4LCalender.vue';
-export { default as W4LHeroCard } from './shared/cards/W4LHeroCard.vue';
+export { default as HomeHeroSection } from './shared/page-sections/home/W4LHeroCard.vue';
 export { default as W4LImage } from './shared/image/W4LImage.vue';
 
-/*  share/sections/about: routes  */
-export { default as SectionsContainer } from './shared/sections/SectionsContainer.vue';
-export { default as W4LEComSection } from './shared/sections/w4l/W4LEComSection.vue';
-export { default as AboutHeroCard } from './shared/sections/about/AboutHeroCard.vue';
-export { default as TeamCard } from './shared/sections/about/TeamCard.vue';
-export { default as MissionCard } from './shared/sections/about/MissionCard.vue';
-export { default as OurJourneyCard } from './shared/sections/about/OurJourneyCard.vue';
+/*  share/page-sections/about: routes  */
+export { default as SectionsContainer } from './shared/page-sections/SectionsContainer.vue';
+export { default as HomeEComSection } from './shared/page-sections/home/HomeEComSection.vue';
+export { default as AboutHeroCard } from './shared/page-sections/about/AboutHeroCard.vue';
+export { default as TeamCard } from './shared/page-sections/about/TeamCard.vue';
+export { default as MissionCard } from './shared/page-sections/about/MissionCard.vue';
+export { default as OurJourneyCard } from './shared/page-sections/about/OurJourneyCard.vue';
 // ---------------------------------------------------------

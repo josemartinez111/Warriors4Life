@@ -12,9 +12,9 @@ import RookiesStadium from '../../assets/images/rockiesStadium.jpg';
 import {
   SectionsContainer,
   W4LCalender,
-  W4LHeroCard,
+  HomeHeroSection,
   ShowCalendarModal,
-  W4LEComSection
+  HomeEComSection,
 } from '../../components';
 import Layout from '../../components/Layout.vue';
 // ################################################################
@@ -37,7 +37,7 @@ function showCalendar() {
     <main>
       <div class="home-content">
       <!-- Hero section component -->
-      <W4LHeroCard />
+      <HomeHeroSection />
       <!-- Calender Section -->
       <div class="text-white pt-24 pb-24">
         <SectionsContainer
@@ -55,13 +55,28 @@ function showCalendar() {
           <!-- Modal that pops up when the calendar is clicked -->
           <ShowCalendarModal
             :toggle-modal="showCalendar"
-            :is-open="isModalOpen"
-          />
+            :is-open="isModalOpen">
+            <!-- button name -->
+            <template #close-btn-name>
+              Close Calendar
+            </template>
+            <!-- children -->
+            <template #children>
+              <!-- header -->
+              <h3 class="font-bold text-2xl sm:text-3xl md:text-4xl pb-11 pt-5 text-center">
+                Scheduled Events
+              </h3>
+              <!-- Calendar-component -->
+              <div class="overflow-x-auto">
+                <W4LCalender />
+              </div>
+            </template>
+          </ShowCalendarModal>
         </SectionsContainer>
       </div>
-    
+      
       <!-- Commerce Component -->
-      <W4LEComSection />
+      <HomeEComSection />
       </div>
     </main>
   </Layout>

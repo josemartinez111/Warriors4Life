@@ -1,5 +1,5 @@
 <!-- ********************************************************
-       components/shared/sections/about/TeamCard.vue
+       components/shared/page-sections/about/TeamCard.vue
 ********************************************************* -->
 <!-- --------------------------------------------------------
                         SCRIPT-SETUP
