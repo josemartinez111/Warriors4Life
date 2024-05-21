@@ -7,7 +7,7 @@
 <script setup lang="ts">
 // ################################################################
 import { onMounted, ref, toRefs, watch } from 'vue';
-import { W4LButton, W4LCalender } from '../index.ts';
+import { W4LButton } from '../index.ts';
 // ################################################################
 
 const props = defineProps<{
@@ -51,12 +51,13 @@ onMounted(() => {
       @click.stop
     >
       <!-- Close button -->
-      <div class="modal-backdrop flex justify-center sm:justify-end">
+      <div class="modal-backdrop flex justify-center bg-rose-600 rounded-2xl sm:justify-end">
         <W4LButton custom-class="text-white btn-md w-full rounded-2xl uppercase mt-4 sm:mt-0" @click="closeModal">
-          <slot name="close-btn-name"></slot>
+          <!-- Button name Slot -->
+          <slot name="close-btn-name" />
         </W4LButton>
       </div>
-      <slot name="children"></slot>
+      <slot name="children" />
     </div>
   </dialog>
 </template>
