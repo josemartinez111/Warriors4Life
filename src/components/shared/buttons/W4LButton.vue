@@ -48,13 +48,5 @@ const buttonClass = computed(() => [
 /* ---------------------------- IMPORTS ------------------------------ */
 
 /* ################################################################### */
-
-/* .home-btn {
-  @apply btn btn-sm btn-ghost ml-2
-  btn-active drop-shadow-2xl
-  transition-all ease-in-out
-  duration-300 hover:bg-blue-950
-  text-white px-8 rounded-2xl;
-} */
 </style>
 <!-- ---------------------------------------------------- -->

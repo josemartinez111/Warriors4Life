@@ -19,7 +19,7 @@
 .nav-links {
   @apply transition-all text-[0.7rem]
   ease-in-out text-white p-3 rounded-2xl
-  drop-shadow-2xl hover:text-blue-300 px-3 py-0;
+  drop-shadow-2xl hover:text-blue-300 px-3 py-1.5;
 }
 
 .nav-login {
