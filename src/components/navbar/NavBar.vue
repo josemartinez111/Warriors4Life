@@ -1,18 +1,30 @@
-<!-- ********************************************************
+<!-- ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
                      components/NavBar.vue
-********************************************************* -->
+∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ -->
 <!-- --------------------------------------------------------
                         SCRIPT-SETUP
 --------------------------------------------------------- -->
 
 <script setup lang="ts">
-// ################################################################
+// ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 import logo from '../../assets/images/warriors4Life-no-bg.png';
 import { UseNavBar } from '../../composables/UseNavBar.ts';
-import { MenuDropdownIcon, UpcomingEventsButtonModal, W4LCalender, W4LButton, DisplaySVGIcons } from '../index';
-// ################################################################
+import {
+  MenuDropdownIcon,
+  UpcomingEventsButtonModal,
+  W4LCalender,
+  W4LButton,
+  DisplaySVGIcons,
+} from '../index';
+// ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 
-const { navLinks, activeTab, mobileMenuOpen, isMobile, toggleMenu } = UseNavBar();
+const {
+  navLinks,
+  activeTab,
+  mobileMenuOpen,
+  isMobile,
+  toggleMenu,
+} = UseNavBar();
 </script>
 <!-- --------------------------------------------------------
                          < >MARKUP</>
@@ -31,15 +43,18 @@ const { navLinks, activeTab, mobileMenuOpen, isMobile, toggleMenu } = UseNavBar(
             alt="Logo"
             class="h-8 sm:h-12 md:h-16 w-auto mr-2 shadow-inner drop-shadow-2xl"
           />
-          <span class="text-sm sm:text-lg md:text-[1.5rem] uppercase shadow-accent drop-shadow-2xl">
+          <span
+            class="text-sm sm:text-lg md:text-[1.5rem] uppercase shadow-accent drop-shadow-2xl">
             Warriors4Life
           </span>
         </RouterLink>
         <MenuDropdownIcon :toggle-menu="toggleMenu" />
       </div>
-
+      
       <!-- Desktop NavBar -->
-      <div :class="{ flex: !mobileMenuOpen && !isMobile, hidden: mobileMenuOpen || isMobile }" class="primary-nav">
+      <div
+        :class="{ flex: !mobileMenuOpen && !isMobile, hidden: mobileMenuOpen || isMobile }"
+        class="primary-nav">
         <template v-for="link in navLinks" :key="link.name">
           <RouterLink
             :to="link.to"
@@ -55,9 +70,10 @@ const { navLinks, activeTab, mobileMenuOpen, isMobile, toggleMenu } = UseNavBar(
           <W4LCalender />
         </UpcomingEventsButtonModal>
       </div>
-
+      
       <!-- Mobile Nav Dropdown -->
-      <div :class="{ block: mobileMenuOpen, hidden: !mobileMenuOpen }" class="mobile-nav">
+      <div :class="{ block: mobileMenuOpen, hidden: !mobileMenuOpen }"
+           class="mobile-nav">
         <template v-for="link in navLinks" :key="`mobile-${link.name}`">
           <RouterLink :to="link.to" class="block text-white px-4 py-2">
             {{ link.name }}
@@ -78,9 +94,9 @@ const { navLinks, activeTab, mobileMenuOpen, isMobile, toggleMenu } = UseNavBar(
                             STYLES
 --------------------------------------------------------- -->
 <style scoped>
-/* ################################################################### */
-/* ---------------------------- IMPORTS ------------------------------ */
-@import 'navbar.styles.css';
-/* ################################################################### */
+/* ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ */
+/* ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ IMPORTS ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ */
+@import "navbar.styles.css";
+/* ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ */
 </style>
 <!-- ---------------------------------------------------- -->

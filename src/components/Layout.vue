@@ -9,7 +9,7 @@
 import { NavBar, Footer } from './index';
 import { W4LFloatingButton } from './index';
 import { storeToRefs } from 'pinia';
-import { UseDarkmodeStore } from '../stores/UseDarkmodeStore.ts';
+import { UseDarkmodeStore } from '../stores';
 // ################################################################
 
 
@@ -32,6 +32,7 @@ const { isDarkMode } = storeToRefs(store);
 <!-- --------------------------------------------------------
                          < >MARKUP</>
 --------------------------------------------------------- -->
+
 <template>
   <div class="relative min-h-screen">
     <!-- Navbar Component -->
@@ -48,7 +49,6 @@ const { isDarkMode } = storeToRefs(store);
     <!-- Footer Component -->
     <Footer />
   </div>
-  
 </template>
 <!-- --------------------------------------------------------
                             STYLES

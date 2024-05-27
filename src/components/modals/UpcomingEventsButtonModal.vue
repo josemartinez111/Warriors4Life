@@ -1,16 +1,15 @@
 <!-- ********************************************************
-        component/modals/UpcomingEventsButtonModal.vue
+        component/modals/UpcomingEventsBtnModal.vue
 ********************************************************* -->
 <!-- --------------------------------------------------------
                         SCRIPT-SETUP
 --------------------------------------------------------- -->
 <script setup lang="ts">
-// import { DarkmodeIconSolo } from '../index';
-
-import { UseColorStore } from '../../stores/UseColorStore.ts';
 // ################################################################
-import { W4LButton, W4LCalender, DisplaySVGIcons } from '../index';
+import { W4LButton, W4LCalender } from '../../components';
+import { UseColorStore } from '../../stores';
 import { onMounted, ref } from 'vue';
+import DarkmodeIcon from '../shared/icons/DarkmodeIcon.vue';
 // ################################################################
 
 const { bgPinkFriday } = UseColorStore();
@@ -51,8 +50,7 @@ onMounted(() => {
       </W4LButton>
       
       <!-- Dark mode SVG -->
-      <DisplaySVGIcons
-        icon-name="toggledarkmode"
+      <DarkmodeIcon
         height="28"
         width="28"
         customClass="pl-10 cursor-pointer"
