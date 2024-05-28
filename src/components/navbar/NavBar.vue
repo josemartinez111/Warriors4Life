@@ -14,8 +14,8 @@ import {
   UpcomingEventsButtonModal,
   W4LCalender,
   W4LButton,
-  DisplaySVGIcons,
 } from '../index';
+import DarkmodeIcon from '../shared/icons/DarkmodeIcon.vue';
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 
 const {
@@ -81,8 +81,7 @@ const {
         </template>
         <W4LButton @click="toggleMenu">Close</W4LButton>
         <!-- Dark mode SVG -->
-        <DisplaySVGIcons
-          icon-name="toggledarkmode"
+        <DarkmodeIcon
           height="28" width="28"
           customClass="pl-10 cursor-pointer"
         />
