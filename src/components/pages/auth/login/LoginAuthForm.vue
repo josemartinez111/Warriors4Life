@@ -74,8 +74,15 @@ const signInButtons = ref([
               Sign in with
             </h1>
             <p class="mt-2 text-xs sm:text-sm text-gray-600 dark:text-neutral-400">
-              Third party services
+              Third party services or if you dont have an account
             </p>
+            <a
+              class="text-blue-600 decoration-2 hover:underline text-[0.8rem] xl:text-sm dark:text-blue-500"
+              href="#"
+              @click.prevent="$emit('toggle-form')"
+            >
+                Register here
+              </a>
           </div>
           
           <div class="mt-4 sm:mt-5">
