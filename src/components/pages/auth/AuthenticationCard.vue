@@ -25,7 +25,7 @@ function toggleForm() {
     <!-- Register Form -->
     <RegisterAuthForm v-show="isRegisterForm" @toggle-form="toggleForm" />
     <!-- Login Form -->
-    <LoginAuthForm v-show="!isRegisterForm" />
+    <LoginAuthForm v-show="!isRegisterForm" @toggle-form="toggleForm" />
   </div>
 </template>
 
