@@ -22,10 +22,10 @@ interface FormField {
 
 const formFields = ref<FormField[]>([
   {
-    id: 'new-password',
-    type: 'password',
-    label: 'New password',
-    placeholder: '********',
+    id: 'email',
+    type: 'email',
+    label: 'Email',
+    placeholder: 'you@email.com',
     isFullSpan: true,
   },
   {
@@ -69,6 +69,15 @@ const signInButtons = ref([
         <!-- Card -->
         <div
           class="p-4 sm:p-6 md:p-7 flex flex-col rounded-2xl shadow-lg dark:bg-neutral-900">
+          <div class="text-center">
+            <h1 class="block text-lg sm:text-xl md:text-2xl font-bold text-gray-800 dark:text-white">
+              Sign in with
+            </h1>
+            <p class="mt-2 text-xs sm:text-sm text-gray-600 dark:text-neutral-400">
+              Third party services
+            </p>
+          </div>
+          
           <div class="mt-4 sm:mt-5">
             <!-- Signin With Buttons -->
             <div class="space-y-1">
