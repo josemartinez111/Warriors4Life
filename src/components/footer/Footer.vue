@@ -7,7 +7,7 @@
 <script setup lang="ts">
 // ################################################################
 import logo from '../../assets/images/warriors4Life-no-bg.png';
-import DisplaySVGIcons from '../shared/icons/DisplaySVGIcons.vue';
+import { DisplaySVGIcons } from '../../components';
 // ################################################################
 
 

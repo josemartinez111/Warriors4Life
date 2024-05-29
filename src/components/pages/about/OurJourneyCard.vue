@@ -1,5 +1,5 @@
 <!-- ********************************************************
-     components/shared/page-sections/about/OurJourneyCard.vue
+     components/shared/pages/about/OurJourneyCard.vue
 ********************************************************* -->
 <!-- --------------------------------------------------------
                         SCRIPT-SETUP
@@ -7,9 +7,9 @@
 <script setup lang="ts">
 // ################################################################
 import { storeToRefs } from 'pinia';
-import usoJose from '../../../../assets/images/usoJose.jpg';
-import { UseColorStore, UseDarkmodeStore } from '../../../../stores';
-import W4LButton from '../../buttons/W4LButton.vue';
+import usoJose from '../../../assets/images/usoJose.jpg';
+import { UseColorStore, UseDarkmodeStore } from '../../../stores';
+import W4LButton from '../../shared/buttons/W4LButton.vue';
 // ################################################################
 
 const store = UseDarkmodeStore();
@@ -89,7 +89,7 @@ const colorStore = UseColorStore();
               alt="..."
               :src="usoJose"
               class="w-full h-auto align-middle rounded-t-lg"
-              srcset="../../../../assets/images/usoJose.jpg 100w, ../../../../assets/images/usoJose.jpg 200w"
+              :srcset="`${usoJose} 100w, ${usoJose} 200w`"
               sizes="(max-width: 600px) 100vw, 50vw"
             />
             <blockquote class="relative p-8 mb-4">

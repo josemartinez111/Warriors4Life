@@ -1,5 +1,5 @@
 <!-- ********************************************************
-        component/shared/page-sections/SectionsContainer.vue
+        component/shared/pages/SectionsContainer.vue
 ********************************************************* -->
 <!-- --------------------------------------------------------
                         SCRIPT-SETUP
@@ -7,8 +7,8 @@
 <script setup lang="ts">
 // ################################################################
 import { toRefs } from 'vue';
-import { UseColorStore } from '../../../stores';
-import { W4LImage } from '../../index.ts';
+import { UseColorStore } from '../../stores';
+import { W4LImage } from '../index.ts';
 // ################################################################
 
 const props = defineProps<{

@@ -1,39 +1,34 @@
 <!-- ********************************************************
-                components/auth/SigninWithButton.vue
+                components/auth/AuthenticationCard.vue
 ********************************************************* -->
 <!-- --------------------------------------------------------
                         SCRIPT-SETUP
 --------------------------------------------------------- -->
 <script setup lang="ts">
+import { ref } from 'vue';
+
 // ################################################################
-import { toRefs } from 'vue';
-import DisplaySVGIcons, {
-  SVGProps,
-} from '../shared/icons/DisplaySVGIcons.vue';
+import { RegisterAuthForm, LoginAuthForm } from '../../../components';
 // ################################################################
 
-const props = defineProps<{
-  iconName: SVGProps['iconName'];
-  customClass?: string | Array<string>;
-}>();
+const isRegisterForm = ref(true);
 
-const { iconName } = toRefs(props);
+function toggleForm() {
+  isRegisterForm.value = !isRegisterForm.value;
+}
 </script>
 <!-- --------------------------------------------------------
                      <>MARKUP</>
 --------------------------------------------------------- -->
 <template>
-  <button
-    type="button"
-    class="sign-in-with-btn"
-  >
-    <DisplaySVGIcons :icon-name="iconName" />
-    <span :class="`${customClass}`">
-      <!-- children -->
-      <slot />
-    </span>
-  </button>
+  <div>
+    <!-- Register Form -->
+    <RegisterAuthForm v-show="isRegisterForm" @toggle-form="toggleForm" />
+    <!-- Login Form -->
+    <LoginAuthForm v-show="!isRegisterForm" />
+  </div>
 </template>
+
 <!-- --------------------------------------------------------
                             STYLES
 --------------------------------------------------------- -->
@@ -42,13 +37,5 @@ const { iconName } = toRefs(props);
 /* ---------------------------- IMPORTS ------------------------------ */
 
 /* ################################################################### */
-
-.sign-in-with-btn {
-  @apply w-full pl-8 py-1 inline-flex items-center
-  text-sm font-medium rounded-lg border border-gray-200
-  bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50
-  disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700
-  dark:text-white dark:hover:bg-neutral-800;
-}
 </style>
 <!-- ---------------------------------------------------- -->

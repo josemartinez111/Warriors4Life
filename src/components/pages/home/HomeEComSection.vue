@@ -1,13 +1,13 @@
 <!-- ********************************************************
-         components/shared/page-sections/HomeEcomSection
+         components/shared/pages/HomeEcomSection
 ********************************************************* -->
 <!-- --------------------------------------------------------
-      components/shared/page-sections/home/HomeEComSection.vue
+      components/shared/pages/home/HomeEComSection.vue
 --------------------------------------------------------- -->
 <script setup lang="ts">
 // ################################################################
-import neverForgotten from '../../../../assets/images/neverForgotten.jpg';
-import W4LButton from '../../buttons/W4LButton.vue';
+import neverForgotten from '../../../assets/images/neverForgotten.jpg';
+import W4LButton from '../../shared/buttons/W4LButton.vue';
 // ################################################################
 </script>
 <!-- --------------------------------------------------------
