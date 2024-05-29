@@ -22,18 +22,31 @@ export default {
         'parallax-flags': 'url(\'/src/assets/images/many-flags.jpg\')',
       },
       // ____________________________________________________________________
+      boxShadow: {
+        // call: shadow-thick
+        thick: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1)',
+      },
+      dropShadow: {
+        // call: drop-shadow-3xl/4xl etc...
+        '3xl': '0 35px 35px rgba(0, 0, 0, 0.25)',
+        '4xl': [
+          '0 35px 35px rgba(0, 0, 0, 0.25)',
+          '0 45px 65px rgba(0, 0, 0, 0.15)'
+        ]
+      },
+      // ____________________________________________________________________
       // Primevue preset color theme
       colors: {
         background: 'var(--background-color)',
         text: 'var(--text-color)',
-        'cslight-txt': '#ffffff',
-        'snow-white-bg': '#FBF5F3',
-        'paynes-blue-bg': '#4F646F',
-        'platinum-bg': '#DEE7E7',
-        'powder-blue-bg': '#A4BFEB',
-        'delta-blue-bg': '#3A405A',
-        'columbia-blue-bg': '#BFD5E2',
-        'ghost-white-bg': '#F0EFF4',
+        'cslight': '#ffffff',
+        'snow-white': '#FBF5F3',
+        'paynes-blue': '#4F646F',
+        'platinum': '#DEE7E7',
+        'powder-blue': '#A4BFEB',
+        'delta-blue': '#3A405A',
+        'columbia-blue': '#BFD5E2',
+        'ghost-white': '#F0EFF4',
         'csdark': '#333333',
         'great-gray': '#29323C',
         'davys-gray': '#534D56',

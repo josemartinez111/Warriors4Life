@@ -1,5 +1,5 @@
 <!-- ********************************************************
-       components/shared/page-sections/about/MissionCard.vue
+       components/shared/pages/about/MissionCard.vue
 ********************************************************* -->
 <!-- --------------------------------------------------------
                         SCRIPT-SETUP
@@ -7,10 +7,10 @@
 <script setup lang="ts">
 // ################################################################
 import { computed } from 'vue';
-import { UseColorStore } from '../../../../stores';
-import twoWarriors from '../../../../assets/images/twoWarriors.jpg';
-import neverForget from '../../../../assets/images/never-forget.jpg';
-import theSquad from '../../../../assets/images/the-squad.jpg';
+import { UseColorStore } from '../../../stores';
+import twoWarriors from '../../../assets/images/twoWarriors.jpg';
+import neverForget from '../../../assets/images/never-forget.jpg';
+import theSquad from '../../../assets/images/the-squad.jpg';
 // ################################################################
 
 interface Item {

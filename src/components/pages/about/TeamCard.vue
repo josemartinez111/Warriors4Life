@@ -1,5 +1,5 @@
 <!-- ********************************************************
-       components/shared/page-sections/about/TeamCard.vue
+       components/shared/pages/about/TeamCard.vue
 ********************************************************* -->
 <!-- --------------------------------------------------------
                         SCRIPT-SETUP
@@ -9,8 +9,8 @@ import { storeToRefs } from 'pinia';
 
 // ################################################################
 import { reactive } from 'vue';
-import { UseColorStore } from '../../../../stores/UseColorStore.ts';
-import { UseDarkmodeStore } from '../../../../stores/UseDarkmodeStore.ts';
+import { UseColorStore } from '../../../stores/UseColorStore.ts';
+import { UseDarkmodeStore } from '../../../stores/UseDarkmodeStore.ts';
 // ################################################################
 
 interface TeamMember {

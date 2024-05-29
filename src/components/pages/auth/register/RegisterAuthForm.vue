@@ -1,14 +1,14 @@
-<!-- ********************************************************
-                components/auth/FormInputCard.vue
-********************************************************* -->
+<!-- ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
+         components/pages/auth/RegisterAuthForm.vue
+∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ -->
 <!-- --------------------------------------------------------
                         SCRIPT-SETUP
 --------------------------------------------------------- -->
 <script setup lang="ts">
-// ################################################################
+// ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 import { ref } from 'vue';
-import { SigninWithButton } from '../../components';
-// ################################################################
+import { SigninWithButton } from '../../../index.ts';
+// ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 
 interface FormField {
   id: string;
@@ -17,6 +17,7 @@ interface FormField {
   placeholder: string;
   isFullSpan?: boolean;
 }
+// ____________________________________________________________________
 
 const formFields = ref<FormField[]>([
   {
@@ -58,24 +59,50 @@ const formFields = ref<FormField[]>([
     isFullSpan: true,
   },
 ]);
+
+const signInButtons = ref([
+  {
+    iconName: 'google-colored',
+    label: 'Sign Up with Google',
+    svgClass: 'h-4 w-4 sm:h-5 sm:w-5 pl-8'
+  },
+  {
+    iconName: 'linkedin-colored',
+    label: 'Sign Up with LinkedIn',
+    svgClass: 'h-4 w-4 sm:h-3 sm:w-3'
+  },
+  {
+    iconName: 'facebook-colored',
+    label: 'Sign Up with Facebook',
+    svgClass: 'h-4 w-4 sm:h-5 sm:w-5'
+  },
+  {
+    iconName: 'apple-colored',
+    label: 'Sign Up with Apple',
+    svgClass: 'h-4 w-4 sm:h-5 sm:w-5'
+  }
+]);
 </script>
+*/
 <!-- --------------------------------------------------------
                      <>MARKUP</>
 --------------------------------------------------------- -->
 <template>
-  <div>
-    <!-- Form -->
-    <form>
+  <form>
       <div class="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto">
         <!-- Card -->
         <div class="p-4 sm:p-6 md:p-7 flex flex-col rounded-2xl shadow-lg dark:bg-neutral-900">
           <div class="text-center">
-            <h1 class="block text-lg sm:text-xl md:text-2xl font-bold text-gray-800 dark:text-white"
-              >Start your free trial</h1
-            >
+            <h1 class="block text-lg sm:text-xl md:text-2xl font-bold text-gray-800 dark:text-white">
+              Register Today!
+            </h1>
             <p class="mt-2 text-xs sm:text-sm text-gray-600 dark:text-neutral-400">
               Already have an account?
-              <a class="text-blue-600 decoration-2 hover:underline font-medium dark:text-blue-500" href="#">
+              <a
+                class="text-blue-600 decoration-2 hover:underline font-medium dark:text-blue-500"
+                href="#"
+                @click.prevent="$emit('toggle-form')"
+              >
                 Sign in here
               </a>
             </p>
@@ -84,52 +111,27 @@ const formFields = ref<FormField[]>([
           <div class="mt-4 sm:mt-5">
             <!-- Signin With Buttons -->
             <div class="space-y-1">
-              <SigninWithButton icon-name="google-colored" custom-class="flex items-center justify-center">
-                <span class="flex items-center w-full">
+              <SigninWithButton
+                v-for="(button, index) in signInButtons"
+                :key="index"
+                :icon-name="button.iconName"
+                custom-class="flex items-center justify-center"
+              >
+                <template v-slot:children>
+                  <span class="flex items-center w-full">
                   <span class="flex-shrink-0">
-                    <!-- Google Icon SVG content -->
-                    <svg class="h-4 w-4 sm:h-5 sm:w-5 pl-8" viewBox="0 0 48 48"></svg>
+                    <svg :class="button.svgClass" viewBox="0 0 48 48"></svg>
                   </span>
                   <span class="flex-grow sm:pr-4 text-center items-center text-xs sm:text-sm truncate">
-                    Sign in with Google
+                    {{ button.label }}
                   </span>
                 </span>
-              </SigninWithButton>
-              <SigninWithButton icon-name="linkedin-colored" custom-class="items-center justify-center">
-                <span class="flex items-center w-full">
-                  <span class="flex-shrink-0">
-                    <!-- LinkedIn Icon SVG content -->
-                    <svg class="h-4 w-4 sm:h-3 sm:w-3" viewBox="0 0 48 48"></svg>
-                  </span>
-                  <span class="flex-grow text-center items-center pl-1 sm:pr-4 text-xs sm:text-sm truncate"
-                    >Sign in with LinkedIn</span
-                  >
-                </span>
-              </SigninWithButton>
-              <SigninWithButton icon-name="facebook-colored" custom-class="flex items-center justify-center">
-                <span class="flex items-center w-full">
-                  <span class="pl-1 sm:pl-2 flex-shrink-0">
-                    <!-- Facebook Icon SVG content -->
-                    <svg class="h-4 w-4 sm:h-5 sm:w-5" viewBox="0 0 48 48"></svg>
-                  </span>
-                  <span class="flex-grow text-center  pr-1 sm:pr-4 text-xs sm:text-sm truncate"
-                    >Sign in with Facebook</span
-                  >
-                </span>
-              </SigninWithButton>
-              <SigninWithButton icon-name="apple-colored" custom-class="flex items-center justify-center">
-                <span class="flex items-center w-full">
-                  <span class="pl-1 sm:pl-2 flex-shrink-0">
-                    <!-- Apple Icon SVG content -->
-                    <svg class="h-4 w-4 sm:h-5 sm:w-5" viewBox="0 0 48 48"></svg>
-                  </span>
-                  <span class="flex-grow text-center pr-16 sm:pr-4 text-xs sm:text-sm truncate">Sign in with Apple</span>
-                </span>
+                </template>
               </SigninWithButton>
             </div>
 
-            <div class="or-container mt-4 sm:mt-5"> Or </div>
-
+            <div class="or-container mt-4 sm:mt-5">Or</div>
+            
             <!-- Grid -->
             <div class="grid grid-cols-2 gap-2 sm:gap-4">
               <div v-for="field in formFields" :key="field.id" :class="{ 'col-span-full': field.isFullSpan }">
@@ -149,7 +151,7 @@ const formFields = ref<FormField[]>([
               </div>
             </div>
             <!-- End Grid -->
-
+            
             <!-- Checkbox -->
             <div class="mt-4 sm:mt-5 flex items-center">
               <div class="flex">
@@ -174,17 +176,15 @@ const formFields = ref<FormField[]>([
         <!-- End Card -->
       </div>
     </form>
-    <!-- End Form -->
-  </div>
 </template>
-
 <!-- --------------------------------------------------------
                             STYLES
 --------------------------------------------------------- -->
-<style scoped lang="postcss">
-/* ################################################################### */
-/* ---------------------------- IMPORTS ------------------------------ */
-@import './auth.styles.css';
-/* ################################################################### */
+<style scoped>
+/* ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ */
+/* ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ IMPORTS ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ */
+@import "register.styles.css";
+/* ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ */
+
 </style>
 <!-- ---------------------------------------------------- -->

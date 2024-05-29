@@ -7,7 +7,7 @@
 <script setup lang="ts">
 // ################################################################
 import Layout from '../../components/Layout.vue';
-import { FormInput, LeftSideTextGroup } from '../../components';
+import { AuthenticationCard, LeftSideSectionAuthText } from '../../components';
 // ################################################################
 </script>
 <!-- --------------------------------------------------------
@@ -16,14 +16,14 @@ import { FormInput, LeftSideTextGroup } from '../../components';
 <template>
   <!-- Hero -->
   <Layout custom-class="bg-white">
-    <div class="relative bg-gradient-to-bl from-blue-100 via-transparent dark:from-blue-950 dark:via-transparent">
+    <div class="auth-container">
       <div class="max-w-[85rem] px-4 sm:px-6 lg:px-8 lg:py-3 mx-auto">
         <!-- Grid -->
         <div class="grid items-center md:grid-cols-2 gap-8 lg:gap-12">
-          <!-- LeftSideTextGroup component -->
-          <LeftSideTextGroup />
+          <!-- LeftSideSectionAuthText component -->
+          <LeftSideSectionAuthText />
           <!-- Form Input component -->
-          <FormInput />
+          <AuthenticationCard />
         </div>
       </div>
     </div>
@@ -33,10 +33,13 @@ import { FormInput, LeftSideTextGroup } from '../../components';
 <!-- --------------------------------------------------------
                             STYLES
 --------------------------------------------------------- -->
-<style scoped>
-/* ################################################################### */
+<style scoped lang="postcss">
+/* ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ */
 /* ---------------------------- IMPORTS ------------------------------ */
-
-/* ################################################################### */
+.auth-container {
+  @apply relative bg-gradient-to-bl from-blue-100
+  via-transparent dark:from-blue-950 dark:via-transparent;
+}
+/* ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ */
 </style>
 <!-- ---------------------------------------------------- -->

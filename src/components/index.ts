@@ -14,9 +14,11 @@ export { default as ShowCalendarModal } from './modals/ShowCalendarModal.vue';
 export { default as UpcomingEventsButtonModal } from './modals/UpcomingEventsButtonModal.vue';
 
 /* auth: routes */
-export { default as FormInput } from './auth/FormInputCard.vue';
-export { default as SigninWithButton } from './auth/SigninWithButton.vue';
-export { default as LeftSideTextGroup } from './auth/LeftSideTextGroup.vue';
+export { default as AuthenticationCard } from './pages/auth/AuthenticationCard.vue';
+export { default as SigninWithButton } from './pages/auth/SigninWithButton.vue';
+export { default as LeftSideSectionAuthText } from './pages/auth/LeftSideSectionAuthText.vue';
+export { default as RegisterAuthForm } from './pages/auth/register/RegisterAuthForm.vue';
+export { default as LoginAuthForm } from './pages/auth/login/LoginAuthForm.vue';
 
 /* navbar: routes */
 export { default as NavBar } from './navbar/NavBar.vue';
@@ -26,14 +28,14 @@ export { default as Footer } from './footer/Footer.vue';
 export { default as W4LButton } from './shared/buttons/W4LButton.vue';
 export { default as W4LFloatingButton } from './shared/buttons/W4LFloatingButton.vue';
 export { default as W4LCalender } from './shared/calender/W4LCalender.vue';
-export { default as HomeHeroSection } from './shared/page-sections/home/W4LHeroSection.vue';
+export { default as HomeHeroSection } from './pages/home/W4LHeroSection.vue';
 export { default as W4LImage } from './shared/image/W4LImage.vue';
 
-/*  share/page-sections/about: routes  */
-export { default as SectionsContainer } from './shared/page-sections/SectionsContainer.vue';
-export { default as HomeEComSection } from './shared/page-sections/home/HomeEComSection.vue';
-export { default as AboutHeroCard } from './shared/page-sections/about/AboutHeroCard.vue';
-export { default as TeamCard } from './shared/page-sections/about/TeamCard.vue';
-export { default as MissionCard } from './shared/page-sections/about/MissionCard.vue';
-export { default as OurJourneyCard } from './shared/page-sections/about/OurJourneyCard.vue';
+/*  share/pages/about: routes  */
+export { default as SectionsContainer } from './pages/SectionsContainer.vue';
+export { default as HomeEComSection } from './pages/home/HomeEComSection.vue';
+export { default as AboutHeroCard } from './pages/about/AboutHeroCard.vue';
+export { default as TeamCard } from './pages/about/TeamCard.vue';
+export { default as MissionCard } from './pages/about/MissionCard.vue';
+export { default as OurJourneyCard } from './pages/about/OurJourneyCard.vue';
 // ---------------------------------------------------------

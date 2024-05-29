@@ -134,7 +134,7 @@ const passedWithName = computed(() => {
       <!-- #################### LINK-ICONS #################### -->
       <!-- google-colored icon -->
       <div v-show="passedWithName === 'google-colored'">
-         <svg class="w-6 mr-16" width="46" height="47" viewBox="0 0 46 47"
+         <svg class="w-6 mr-11 pl-1.5" width="46" height="46" viewBox="0 0 46 47"
               fill="none">
             <path
               d="M46 24.0287C46 22.09 45.8533 20.68 45.5013
@@ -204,7 +204,7 @@ const passedWithName = computed(() => {
       <!-- apple-colored icon -->
       <div v-show="passedWithName === 'apple-colored'">
          <svg xmlns="http://www.w3.org/2000/svg" width="46" height="47"
-              class="w-8 mr-16" viewBox="0,0,350,270"
+              class="w-11 mr-12 pl-1" viewBox="0,0,350,270"
               style="fill:#FFFFFF;">
             <g fill="#ffffff" fill-rule="nonzero" stroke="none"
                stroke-width="1"

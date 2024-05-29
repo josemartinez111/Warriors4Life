@@ -14,8 +14,8 @@ import {
   UpcomingEventsButtonModal,
   W4LCalender,
   W4LButton,
+  DarkmodeIcon
 } from '../index';
-import DarkmodeIcon from '../shared/icons/DarkmodeIcon.vue';
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 
 const {

@@ -1,5 +1,5 @@
 <!-- ********************************************************
-       components/shared/page-sections/about/AboutHeroCard.vue
+       components/shared/pages/about/AboutHeroCard.vue
 ********************************************************* -->
 <!-- --------------------------------------------------------
                         SCRIPT-SETUP
@@ -7,8 +7,8 @@
 <script setup lang="ts">
 // ################################################################
 import { ref } from 'vue';
-import { UseColorStore, UseDebounceStore } from '../../../../stores';
-import W4LButton from '../../buttons/W4LButton.vue';
+import { UseColorStore, UseDebounceStore } from '../../../stores';
+import W4LButton from '../../shared/buttons/W4LButton.vue';
 // ################################################################
 
 const colorStore = UseColorStore();

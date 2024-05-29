@@ -6,10 +6,9 @@
 --------------------------------------------------------- -->
 <script setup lang="ts">
 // ################################################################
-import { W4LButton, W4LCalender } from '../../components';
+import { W4LButton, W4LCalender, DarkmodeIcon } from '../../components';
 import { UseColorStore } from '../../stores';
 import { onMounted, ref } from 'vue';
-import DarkmodeIcon from '../shared/icons/DarkmodeIcon.vue';
 // ################################################################
 
 const { bgPinkFriday } = UseColorStore();
