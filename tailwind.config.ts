@@ -22,6 +22,29 @@ export default {
         'parallax-flags': 'url(\'/src/assets/images/many-flags.jpg\')',
       },
       // ____________________________________________________________________
+      screens: {
+        'tablet': '640px',
+        // => @media (min-width: 640px) {
+        // This breakpoint is used to target small to medium-sized devices such as tablets.
+        // You can use 'tablet' in your Tailwind classes to apply styles for devices with a minimum width of 640px.
+        // For example: `tablet:bg-red-500` applies a red background on tablet screens and larger.
+        // }
+        
+        'laptop': '1024px',
+        // => @media (min-width: 1024px) {
+        // This breakpoint is used for medium-sized devices such as laptops.
+        // Use 'laptop' in your Tailwind classes to apply styles for devices with a minimum width of 1024px.
+        // For example: `laptop:text-lg` applies larger text on laptop screens and larger.
+        // }
+        
+        'desktop': '1280px',
+        // => @media (min-width: 1280px) {
+        // This breakpoint targets large devices such as desktops.
+        // Use 'desktop' in your Tailwind classes to apply styles for devices with a minimum width of 1280px.
+        // For example: `desktop:p-10` applies larger padding on desktop screens and larger.
+        // }
+      },
+      // ____________________________________________________________________
       boxShadow: {
         // call: shadow-thick
         thick: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1)',

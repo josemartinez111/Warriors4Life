@@ -23,7 +23,7 @@ function handleClick(): void {
 
 // Combining classes ensuring customClass can override default when needed
 const buttonClass = computed(() => [
-  `btn-ghost btn btn-sm ml-2
+  `btn btn-sm ml-2
   btn-active drop-shadow-2xl
   hover:bg-blue-950
   px-8 rounded-2xl active:opacity-5 ease-in

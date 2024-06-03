@@ -43,12 +43,16 @@
 
 /* tailwind utilities ###################################################### */
 @layer utilities {
-  .bg-finish-line {
+  .bg-finish-line-img {
     background-image: url("./assets/images/finishLine.jpg");
   }
   
   .bg-mission-img1 {
     background-image: url("./assets/images/camo-image.png");
+  }
+  
+  .bg-the-squad-img {
+    background-image: url("./assets/images/the-squad.jpg");
   }
 }
 

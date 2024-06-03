@@ -43,7 +43,7 @@ onMounted(() => {
     <div class="flex">
       <!-- NavBar button UPCOMING-EVENTS -->
       <W4LButton
-        custom-class="btn-md uppercase text-[0.7rem] shadow-inner rounded-none"
+        custom-class="btn-ghost btn-md uppercase text-[0.7rem] shadow-inner rounded-none"
         @click="showModal"
       >Upcoming Events
       </W4LButton>
