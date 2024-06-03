@@ -111,7 +111,7 @@ const colorStore = UseColorStore();
         <W4LButton
           :custom-class="[
             isDarkMode ? 'text-white bg-gradient-to-tr' : '',
-            'btn-md w-7/12 uppercase rounded-[8px] text-blue-950 hover:text-white',
+            'btn-md w-7/12 bg-blue-950 hover:bg-rose-600 border-none text-white uppercase rounded-[8px] text-blue-950 hover:text-white',
           ]"
         >
           Register Now

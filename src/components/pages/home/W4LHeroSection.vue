@@ -47,7 +47,7 @@ const { isDarkMode } = storeToRefs(store);
           warriors and Family. Providing strength, Recovery and Empowerment.
         </p>
         <div :class="[`${isDarkMode ? 'text-white' : 'text-blue-950'}`, 'w-full flex justify-center lg:justify-start']">
-          <W4LButton custom-class="font-bold btn-md rounded-[8px] w-full sm:w-auto px-10 lg:px-28 uppercase hover:text-white mt-4 lg:mt-0">
+          <W4LButton custom-class="font-bold btn-md rounded-[8px] w-full bg-rose-600 text-white border-none sm:w-auto px-10 lg:px-28 uppercase hover:text-white mt-4 lg:mt-0">
             Support Us
           </W4LButton>
         </div>

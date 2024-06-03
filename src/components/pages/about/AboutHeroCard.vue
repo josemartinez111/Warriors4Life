@@ -28,12 +28,12 @@ debounceStore.setScrollHandler(() => {
 <template>
   <section
     ref="sectionRef"
-    class="relative bg-finish-line bg-cover bg-center text-white drop-shadow-2xl h-screen flex items-center"
+    class="relative bg-finish-line-img bg-cover bg-center text-white drop-shadow-2xl h-screen flex items-center"
   >
     <!-- Gradient overlay if needed, adjust as necessary -->
     <div
       :class="[`${colorStore.dreamBlue}`, 'absolute inset-0 bg-gradient-to-r from-blue-950 to-transparent/70']"
-    ></div>
+    />
     
     <!-- Content container with padding but no max width constraint -->
     <div class="w-full px-4 py-24 sm:px-6 z-10 lg:px-8 flex justify-center">
@@ -69,9 +69,9 @@ debounceStore.setScrollHandler(() => {
 
 /*noinspection CssUnusedSymbol*/
 .w4l-btn {
-  @apply btn-md uppercase rounded-[8px] btn-ghost
+  @apply btn-md uppercase rounded-[8px]
   bg-rose-600 px-24 text-sm font-medium
-  text-white shadow-2xl hover:bg-rose-700 active:opacity-5;
+  text-white shadow-2xl hover:bg-blue-950 active:opacity-5;
 }
 </style>
 <!-- ---------------------------------------------------- -->
