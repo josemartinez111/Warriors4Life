@@ -1,7 +1,8 @@
 # FILE: .prettierrc.yaml
 # ________________________________
-
-printWidth: 115
+plugins:
+  - prettier-plugin-tailwindcss # need to install `prettier-plugin-tailwindcss`
+printWidth: 102
 tabWidth: 2
 useTabs: false
 semi: true

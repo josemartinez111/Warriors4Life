@@ -30,6 +30,7 @@ export { default as W4LFloatingButton } from './shared/buttons/W4LFloatingButton
 export { default as W4LCalender } from './shared/calender/W4LCalender.vue';
 export { default as HomeHeroSection } from './pages/home/W4LHeroSection.vue';
 export { default as W4LImage } from './shared/image/W4LImage.vue';
+export { default as Ribbon } from './shared/ribbon/Ribbon.vue';
 
 /*  share/pages/about: routes  */
 export { default as SectionsContainer } from './pages/SectionsContainer.vue';

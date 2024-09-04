@@ -14,7 +14,8 @@ import {
   UpcomingEventsButtonModal,
   W4LCalender,
   W4LButton,
-  DarkmodeIcon
+  DarkmodeIcon,
+  Ribbon
 } from '../index';
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 
@@ -56,7 +57,19 @@ const {
         :class="{ flex: !mobileMenuOpen && !isMobile, hidden: mobileMenuOpen || isMobile }"
         class="primary-nav">
         <template v-for="link in navLinks" :key="link.name">
+          <Ribbon v-if="link.wrapWithRibbon" msg="Coming Soon">
+            <RouterLink
+              :to="link.to"
+              :class="[
+                link.specialStyle || 'nav-links',
+                { 'tab-active border-2': activeTab === link.name, tab: activeTab !== link.name },
+              ]"
+            >
+              {{ link.name }}
+            </RouterLink>
+          </Ribbon>
           <RouterLink
+            v-else
             :to="link.to"
             :class="[
               link.specialStyle || 'nav-links',
