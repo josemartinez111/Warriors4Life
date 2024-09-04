@@ -31,25 +31,25 @@ const teamMembers = reactive<TeamMember[]>([
     id: 1,
     name: 'John Doe',
     role: 'Software Engineer',
-    image: 'https://spacema-dev.com/elevate/assets/images/team/1.jpg',
+    image: 'https://images.pexels.com/photos/1310522/pexels-photo-1310522.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
   },
   {
     id: 2,
     name: 'Jane Smith',
     role: 'Graphic Designer',
-    image: 'https://spacema-dev.com/elevate/assets/images/team/4.jpg',
+    image: 'https://media.istockphoto.com/id/1388253782/photo/positive-successful-millennial-business-professional-man-head-shot-portrait.jpg?s=2048x2048&w=is&k=20&c=0HU1oQGXlO4nrrMKKzAK4Jmu6XDLvXhTGjKScvrNIZw=',
   },
   {
     id: 3,
     name: 'Alex Johnson',
     role: 'Marketing Manager',
-    image: 'https://spacema-dev.com/elevate/assets/images/team/3.jpg',
+    image: 'https://media.istockphoto.com/id/1386479313/photo/happy-millennial-afro-american-business-woman-posing-isolated-on-white.jpg?s=2048x2048&w=is&k=20&c=JecbHiBxM7ZzAADbPkqJuvNoCs3uO2VrK2LmrSpm3Ek=',
   },
   {
     id: 3,
     name: 'Sarah Johnson',
     role: 'Content Writer',
-    image: 'https://spacema-dev.com/elevate/assets/images/team/7.jpg',
+    image: 'https://media.istockphoto.com/id/1407759041/photo/confident-happy-beautiful-hispanic-student-girl-indoor-head-shot-portrait.jpg?s=2048x2048&w=is&k=20&c=eskue6p9gwUVS2t0Kpuw6rd7Sgu5nKgxsMD6Aqaba8I=',
   },
   // Add additional team members here
 ]);
