@@ -1,16 +1,16 @@
-<!-- ********************************************************
-     components/shared/pages/about/OurJourneyCard.vue
-********************************************************* -->
+<!-- ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
+                       COMPONENT_PATH
+∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ -->
 <!-- --------------------------------------------------------
                         SCRIPT-SETUP
 --------------------------------------------------------- -->
 <script setup lang="ts">
-// ################################################################
+// ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 import { storeToRefs } from 'pinia';
 import usoJose from '../../../assets/images/usoJose.jpg';
 import { UseColorStore, UseDarkmodeStore } from '../../../stores';
 import W4LButton from '../../shared/buttons/W4LButton.vue';
-// ################################################################
+// ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 
 const store = UseDarkmodeStore();
 const { isDarkMode } = storeToRefs(store);
@@ -81,7 +81,7 @@ const colorStore = UseColorStore();
             </div>
           </div>
         </div>
-
+        
         <!-- Image and text card section -->
         <div class="w-full lg:w-5/12 px-4 mb-6 lg:mb-0">
           <div class="relative flex flex-col min-w-0 break-words w-full mb-4 shadow-lg rounded-lg bg-rose-600">
@@ -123,10 +123,8 @@ const colorStore = UseColorStore();
 <!-- --------------------------------------------------------
                             STYLES
 --------------------------------------------------------- -->
-<style scoped>
-/* ################################################################### */
-/* ---------------------------- IMPORTS ------------------------------ */
+<style scoped lang="postcss">
 
-/* ################################################################### */
+
 </style>
 <!-- ---------------------------------------------------- -->

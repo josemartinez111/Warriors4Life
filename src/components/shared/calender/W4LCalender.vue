@@ -1,17 +1,14 @@
-<!-- ********************************************************
-               components/shared/W4LCalender.vue
-********************************************************* -->
+<!-- ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
+             components/shared/W4LCalender.vue
+∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ -->
 <!-- --------------------------------------------------------
                         SCRIPT-SETUP
 --------------------------------------------------------- -->
 <script setup lang="ts">
-// ################################################################
+// ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 import { computed, toRefs } from 'vue';
 import { UseCalendar } from '../../../composables/UseCalendar.ts';
-// ################################################################
-
-// ____________________________________________________________________
-
+// ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 
 // Composables
 const {
@@ -39,12 +36,11 @@ const props = withDefaults(defineProps<{
 
 const { handleCalendarClick } = toRefs(props);
 
-const todayComputed = computed(() => new Date().setHours(0, 0, 0, 0));  // Ensuring no time part
+const todayComputed = computed(() => new Date().setHours(0, 0, 0, 0));
 </script>
 <!-- --------------------------------------------------------
-                         < >MARKUP</>
+                     <>MARKUP</>
 --------------------------------------------------------- -->
-
 <template>
   <div @click="handleCalendarClick" class="calendar-container">
     <!-- Main container that centers everything horizontally and vertically -->
@@ -109,9 +105,8 @@ const todayComputed = computed(() => new Date().setHours(0, 0, 0, 0));  // Ensur
                             STYLES
 --------------------------------------------------------- -->
 <style scoped lang="postcss">
-/* ################################################################### */
-/* ---------------------------- IMPORTS ------------------------------ */
-@import './calendar.styles.css';
-/* ################################################################### */
+	@import "./calendar.styles.css";
 </style>
 <!-- ---------------------------------------------------- -->
+
+

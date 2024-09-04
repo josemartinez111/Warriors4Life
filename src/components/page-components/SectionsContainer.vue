@@ -1,37 +1,34 @@
-<!-- ********************************************************
-        component/shared/pages/SectionsContainer.vue
-********************************************************* -->
+<!-- ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
+   component/shared/page-components/SectionsContainer.vue
+∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ -->
 <!-- --------------------------------------------------------
                         SCRIPT-SETUP
 --------------------------------------------------------- -->
 <script setup lang="ts">
-// ################################################################
-import { toRefs } from 'vue';
+// ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 import { UseColorStore } from '../../stores';
 import { W4LImage } from '../index.ts';
-// ################################################################
+// ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 
-const props = defineProps<{
+const { sectionHeader, paragraph, img } = defineProps<{
   sectionHeader: string;
   paragraph: string;
   img?: string;
 }>();
 
-const { sectionHeader, paragraph, img } = toRefs(props);
 const store = UseColorStore();
 </script>
 <!-- --------------------------------------------------------
-                         < >MARKUP</>
+                     <>MARKUP</>
 --------------------------------------------------------- -->
-
 <template>
   <div :class="[`${store.dreamBlue}`, 'hero-overlay hero min-h-[75vh] py-24 sm:py-16']">
     <div class="mx-auto grid gap-x-8 gap-y-10 px-6 lg:px-8 xl:grid-cols-3">
       <div class="w-full mx-auto lg:mx-0 text-center lg:text-left">
-        <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-white">
+        <h2 class="header">
           {{ sectionHeader }}
         </h2>
-        <p class="mt-4 text-sm sm:text-base md:text-lg lg:text-xl leading-7 text-white drop-shadow-2xl shadow-accent">
+        <p class="paragraph">
           {{ paragraph }}
         </p>
         
@@ -53,10 +50,18 @@ const store = UseColorStore();
 <!-- --------------------------------------------------------
                             STYLES
 --------------------------------------------------------- -->
-<style scoped>
-/* ################################################################### */
-/* ---------------------------- IMPORTS ------------------------------ */
+<style scoped lang="postcss">
 
-/* ################################################################### */
+.header {
+  @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-white;
+}
+
+.paragraph {
+  @apply mt-4 text-sm sm:text-base
+  md:text-lg lg:text-xl leading-7
+  text-white drop-shadow-2xl shadow-accent;
+}
 </style>
 <!-- ---------------------------------------------------- -->
+
+

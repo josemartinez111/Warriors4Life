@@ -1,5 +1,5 @@
 <!-- ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
-               pages/our-journey/our-journey.page.vue
+       page-components/our-journey/our-journey.page.vue
 ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ -->
 <!-- --------------------------------------------------------
                         SCRIPT-SETUP
@@ -22,13 +22,11 @@ const currentIndex = ref<number>(0);
 // Function to handle navigation without shifting the page
 const navigateCarousel = (newIndex: number) => {
   const maxIndex = images.length - 1;
-  if (newIndex < 0) {
-    currentIndex.value = maxIndex;
-  } else if (newIndex > maxIndex) {
-    currentIndex.value = 0;
-  } else {
-    currentIndex.value = newIndex;
-  }
+  currentIndex.value = newIndex < 0
+    ? maxIndex
+    : currentIndex.value = newIndex > maxIndex
+      ? 0
+      : newIndex;
 };
 </script>
 <!-- --------------------------------------------------------
@@ -101,10 +99,6 @@ const navigateCarousel = (newIndex: number) => {
                             STYLES
 --------------------------------------------------------- -->
 <style scoped lang="postcss">
-/* ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ */
-/* ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ IMPORTS ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ */
-
-/* ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ */
 
 .img-details {
   @apply relative bg-cover bg-center;

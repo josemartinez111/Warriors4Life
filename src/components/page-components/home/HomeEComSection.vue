@@ -1,14 +1,26 @@
-<!-- ********************************************************
-         components/shared/pages/HomeEcomSection
-********************************************************* -->
+<!-- ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
+     components/shared/page-components/HomeEcomSection
+∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ -->
 <!-- --------------------------------------------------------
-      components/shared/pages/home/HomeEComSection.vue
+                        SCRIPT-SETUP
 --------------------------------------------------------- -->
 <script setup lang="ts">
-// ################################################################
+// ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 import neverForgotten from '../../../assets/images/neverForgotten.jpg';
 import W4LButton from '../../shared/buttons/W4LButton.vue';
-// ################################################################
+// ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
+
+// const props = defineProps<{
+//  msg: string;
+// }>();
+
+// const { msg } = toRefs(props);
+
+// OR
+
+// const { msg } = defineProps<{
+//  msg: string;
+// }>();
 </script>
 <!-- --------------------------------------------------------
                      <>MARKUP</>
@@ -38,7 +50,7 @@ import W4LButton from '../../shared/buttons/W4LButton.vue';
         </div>
       </div>
     </div>
-
+    
     <!-- Right-aligned container for buttons and text -->
     <div class="flex flex-col items-center lg:items-end w-full lg:w-auto lg:ml-8 mt-8 lg:mt-0">
       <!-- Buttons inventory/sold -->
@@ -51,7 +63,7 @@ import W4LButton from '../../shared/buttons/W4LButton.vue';
           Sold&nbsp; <span class="badge badge-secondary">+99 🔥</span>
         </span>
       </div>
-
+      
       <!-- Shop with us text directly under buttons -->
       <div class="w-full lg:w-auto text-center lg:text-left pt-16 lg:pl-12 lg:pr-0">
         <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl lg:pl-12">Shop with us</h1>
@@ -60,7 +72,7 @@ import W4LButton from '../../shared/buttons/W4LButton.vue';
           share a passion for cycling. Whether you're a seasoned rider or new to biking, come join us for a ride.
         </p>
       </div>
-
+      
       <!-- Buy now button -->
       <div
         class="w-full lg:w-auto lg:pl-12 uppercase py-8 lg:pr-16 text-center lg:text-left flex justify-center lg:justify-start"
@@ -75,10 +87,8 @@ import W4LButton from '../../shared/buttons/W4LButton.vue';
 <!-- --------------------------------------------------------
                             STYLES
 --------------------------------------------------------- -->
-<style scoped>
-/* ################################################################### */
-/* ---------------------------- IMPORTS ------------------------------ */
+<style scoped lang="postcss">
 
-/* ################################################################### */
+
 </style>
 <!-- ---------------------------------------------------- -->
