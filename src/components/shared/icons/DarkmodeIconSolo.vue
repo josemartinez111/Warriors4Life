@@ -1,17 +1,15 @@
-<!-- ********************************************************
-             components/icons/DarkmodeIconSolo.vue
-********************************************************* -->
+<!-- ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
+            components/icons/DarkmodeIconSolo.vue
+∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ -->
 <!-- --------------------------------------------------------
                         SCRIPT-SETUP
 --------------------------------------------------------- -->
 <script setup lang="ts">
-
+// ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 import { storeToRefs } from 'pinia';
-
-// ################################################################
 import { computed, toRefs } from 'vue';
 import { UseDarkmodeStore } from '../../../stores/UseDarkmodeStore.ts';
-// ################################################################
+// ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 
 interface SVGDimensions {
   height: string;
@@ -31,14 +29,14 @@ const props = withDefaults(defineProps<SVGDimensions>(), {
 const { height, width, customClass } = toRefs(props);
 
 /*
-* In Vue 3 with Pinia, when you access state directly from the darkmodeStore
-* (e.g., darkmodeStore.state), you don't need to use .value because Pinia
-* automatically unwraps the reactivity of the state properties outside
-* the darkmodeStore. However, when you directly destructure these properties
-* at import, like const { isDarkMode } = UseDarkmodeStore();, you're no
-* longer working with a ref, but with a direct reactive value that Pinia
-* manages internally. So you have to use `storeToRefs` to convert it back
-* */
+ * In Vue 3 with Pinia, when you access state directly from the darkmodeStore
+ * (e.g., darkmodeStore.state), you don't need to use .value because Pinia
+ * automatically unwraps the reactivity of the state properties outside
+ * the darkmodeStore. However, when you directly destructure these properties
+ * at import, like const { isDarkMode } = UseDarkmodeStore();, you're no
+ * longer working with a ref, but with a direct reactive value that Pinia
+ * manages internally. So you have to use `storeToRefs` to convert it back
+ * */
 const store = UseDarkmodeStore();
 const { isDarkMode } = storeToRefs(store);
 
@@ -49,7 +47,7 @@ const switchIconColor = computed(() => {
 });
 </script>
 <!-- --------------------------------------------------------
-                         < >MARKUP</>
+                     <>MARKUP</>
 --------------------------------------------------------- -->
 <template>
   <div>
@@ -102,11 +100,8 @@ const switchIconColor = computed(() => {
 <!-- --------------------------------------------------------
                             STYLES
 --------------------------------------------------------- -->
-<style scoped>
-/* ################################################################### */
-/* ---------------------------- IMPORTS ------------------------------ */
+<style scoped lang="postcss">
 
-/* ################################################################### */
 
 </style>
 <!-- ---------------------------------------------------- -->

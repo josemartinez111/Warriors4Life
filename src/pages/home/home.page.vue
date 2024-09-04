@@ -1,12 +1,11 @@
-<!-- ********************************************************
-                    components/home.page.vue
-********************************************************* -->
+<!-- ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
+                  components/home.page.vue
+∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ -->
 <!-- --------------------------------------------------------
                         SCRIPT-SETUP
 --------------------------------------------------------- -->
-
 <script setup lang="ts">
-// ################################################################
+// ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 import { ref } from 'vue';
 import RookiesStadium from '../../assets/images/rockiesStadium.jpg';
 import {
@@ -17,7 +16,7 @@ import {
   HomeEComSection,
 } from '../../components';
 import Layout from '../../components/Layout.vue';
-// ################################################################
+// ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 
 // const modal = ref<HTMLDialogElement | undefined>(undefined);
 // Create a reactive state for modal visibility
@@ -29,9 +28,8 @@ function showCalendar() {
 }
 </script>
 <!-- --------------------------------------------------------
-                         < >MARKUP</>
+                     <>MARKUP</>
 --------------------------------------------------------- -->
-
 <template>
   <Layout image-class="bg-parallax-flags">
     <main>
@@ -80,14 +78,12 @@ function showCalendar() {
       </div>
     </main>
   </Layout>
-  
-  
 </template>
 <!-- --------------------------------------------------------
                             STYLES
 --------------------------------------------------------- -->
-
 <style scoped lang="postcss">
+
 .home-content {
   @apply min-h-screen flex flex-col items-center space-y-4 pt-16;
 }
@@ -97,4 +93,4 @@ p {
   /* Applies padding and background only to paragraphs */
 }
 </style>
---------------------------------------------------------- -->
+<!-- ---------------------------------------------------- -->

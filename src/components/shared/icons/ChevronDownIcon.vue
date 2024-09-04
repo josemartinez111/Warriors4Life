@@ -1,51 +1,50 @@
-<!-- ********************************************************
-                 components/ChevronDownIcon.vue
-********************************************************* -->
+<!-- ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
+               components/ChevronDownIcon.vue
+∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ -->
 <!-- --------------------------------------------------------
                         SCRIPT-SETUP
 --------------------------------------------------------- -->
-
 <script setup lang="ts">
-// ################################################################
-import { toRefs } from "vue";
-// ################################################################
+// ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
+
+// ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 
 interface ChevronDimensions {
-	width: string;
-	height: string;
+  width: string;
+  height: string;
 }
 // ____________________________________________________________________
-const props = withDefaults(
-	defineProps<ChevronDimensions>(), {
-		width: '16',
-		height: '16'
-});
 
-const { width, height } = toRefs(props);
+const {
+  width = '16',
+  height = '16',
+} = defineProps<ChevronDimensions>();
 </script>
 <!-- --------------------------------------------------------
-                         < >MARKUP</>
+                     <>MARKUP</>
 --------------------------------------------------------- -->
 <template>
   <svg
-	  xmlns="http://www.w3.org/2000/svg"
-	  :width=width :height=height
-	  fill="currentColor"
-	  class="bi bi-chevron-compact-down"
-	  viewBox="0 0 16 16"
+    xmlns="http://www.w3.org/2000/svg"
+    :width=width :height=height
+    fill="currentColor"
+    class="bi bi-chevron-compact-down"
+    viewBox="0 0 16 16"
   >
 	  <path
-		  fill-rule="evenodd"
-		  d="M1.553 6.776a.5.5 0 0 1 .67-.223L8
+      fill-rule="evenodd"
+      d="M1.553 6.776a.5.5 0 0 1 .67-.223L8
 		  9.44l5.776-2.888a.5.5 0 1 1
 		  .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67"
-	  >
+    >
 	  </path>
   </svg>
 </template>
 <!-- --------------------------------------------------------
                             STYLES
 --------------------------------------------------------- -->
-<style scoped>
+<style scoped lang="postcss">
+
 
 </style>
+<!-- ---------------------------------------------------- -->
