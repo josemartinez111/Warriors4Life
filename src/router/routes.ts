@@ -4,7 +4,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 // ---------------------------------------------------------
 
-// Lazy load AboutPage
+// Lazy load pages
 const routes = [
   { path: '/', component: () => import('../pages/home/home.page.vue') },
   { path: '/about', component: () => import('../pages/about/about.page.vue') },

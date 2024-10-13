@@ -13,6 +13,7 @@ import { onMounted, ref } from 'vue';
 
 const { bgPinkFriday } = UseColorStore();
 const modal = ref<HTMLDialogElement | undefined>(undefined);
+const isMobile = ref<boolean>(true);
 
 const showModal = () => {
   modal.value?.showModal();
@@ -52,6 +53,7 @@ onMounted(() => {
         height="28"
         width="28"
         customClass="pl-10 cursor-pointer"
+        :is-mobile="!isMobile"
       />
     </div>
     

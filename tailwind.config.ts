@@ -78,6 +78,8 @@ export default {
         'hot-orange': '#F75C02',
         'desperado-black': '#18181B',
         'war-gray': '#4C4D55',
+        // 'icon-light-color': '#F75C02', // Light color (hot orange)
+        // 'icon-dark-color': '#52A9FF',  // Dark color (custom blue)
         // ____________________________________________________________________
       },
       // ____________________________________________________________________
