@@ -13,6 +13,7 @@ import { onMounted, ref } from 'vue';
 
 const { bgPinkFriday } = UseColorStore();
 const modal = ref<HTMLDialogElement | undefined>(undefined);
+const isMobile = ref<boolean>(true);
 
 const showModal = () => {
   modal.value?.showModal();

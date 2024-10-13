@@ -6,7 +6,7 @@
 --------------------------------------------------------- -->
 <script setup lang="ts">
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
-import { computed, toRefs } from 'vue';
+import { computed, ref } from 'vue';
 import { UseDarkmodeStore } from '../../../stores';
 import { storeToRefs } from 'pinia';
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
@@ -17,15 +17,16 @@ type SVGIconProps = {
   customClass?: string;
   iconColor?: string;
   isDarkMode?: boolean;
+  isMobile?: boolean;
 }
 // ____________________________________________________________________
 
-const props = withDefaults(defineProps<SVGIconProps>(), {
-  height: '24',
-  width: '24',
-});
-
-const { height, width, customClass } = toRefs(props);
+const {
+  height = '24',
+  width = '24',
+  customClass = '',
+  isMobile = false,
+} = defineProps<SVGIconProps>();
 
 /*
  * In Vue 3 with Pinia, when you access state directly from the darkmodeStore
@@ -38,12 +39,38 @@ const { height, width, customClass } = toRefs(props);
  * */
 const store = UseDarkmodeStore();
 const { isDarkMode } = storeToRefs(store);
+const darkColor = ref<string>('#52A9FF');   // Hex color value for dark mode
+const lightColor = ref<string>('#e11d48');  // Hex color value for light mode
 
-// Waits for the toggle to change then switches the color of the icon
-// This is not theme related but just a visual cue that toggles the icon color
-const switchIconColor = computed(() => {
-  return isDarkMode.value ? '#52A9FF' : '#F75C02';
+// Compute the icon colors based on the current dark mode state
+const computeIconColors = computed(() => {
+  return {
+    // `switchMode` is the background color of the toggle switch
+    switchMode: isDarkMode.value ? darkColor.value : lightColor.value,
+    // `sun` is the color of the sun icon if in dark mode or mobile is light
+    sun: !isDarkMode.value && !isMobile
+      ? `fill-[${ lightColor.value }] stroke-[${ lightColor.value }]`
+      : 'fill-transparent stroke-current',
+    moon: isDarkMode.value && !isMobile
+      ? `fill-[${ darkColor.value }] stroke-[${ darkColor.value }]`
+      : 'fill-transparent stroke-current',
+  };
 });
+
+const computeIconClass = (iconType: 'moon' | 'sun') => computed(() => {
+  const colStart = iconType === 'sun' ? 'col-start-1' : 'col-start-2';
+  const baseClasses = `${colStart} row-start-1 stroke-base-100 fill-base-100`;
+  
+  const conditionalClass = !isMobile && !isDarkMode.value
+    ? computeIconColors.value[iconType]
+    : 'fill-rose-600 stroke-current';
+  
+  return `${baseClasses} ${conditionalClass}`;
+});
+
+const sunIconClass = computeIconClass('sun');
+const moonIconClass = computeIconClass('moon');
+
 </script>
 <!-- --------------------------------------------------------
                      <>MARKUP</>
@@ -55,20 +82,22 @@ const switchIconColor = computed(() => {
           <input
             type="checkbox"
             value="synthwave"
-            :class="`toggle theme-controller bg-base-content row-start-1 col-start-1 col-span-2 ${customClass}`"
+            :class="[
+              `toggle theme-controller bg-base-content row-start-1 col-start-1 col-span-2`,
+              customClass
+              ]"
             :height="`${height}px`"
             :width="`${width}px`"
-            :style="{ backgroundColor: switchIconColor }"
+            :style="{ backgroundColor: computeIconColors.switchMode }"
             :checked="isDarkMode"
             @change="store.toggleDarkMode()"
           />
           <!-- SUN-SVG -->
           <svg
-            class="col-start-1 row-start-1 stroke-base-100 fill-base-100"
-            xmlns="http://www.w3.org/2000/svg"
+            :class="sunIconClass"
             :height="`${height}px`"
+            xmlns="http://www.w3.org/2000/svg"
             :width="`${width}px`"
-            :fill="switchIconColor"
             viewBox="0 0 24 24"
             stroke="currentColor"
             stroke-width="2"
@@ -84,11 +113,10 @@ const switchIconColor = computed(() => {
           </svg>
           <!-- MOON-SVG -->
           <svg
-            class="col-start-2 row-start-1 stroke-base-100 fill-base-100"
+            :class="moonIconClass"
             xmlns="http://www.w3.org/2000/svg"
             :height="`${height}px`"
             :width="`${width}px`"
-            :fill="switchIconColor"
             viewBox="0 0 24 24"
             stroke="currentColor"
             stroke-width="2"

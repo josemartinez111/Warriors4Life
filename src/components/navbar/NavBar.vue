@@ -6,6 +6,8 @@
 --------------------------------------------------------- -->
 
 <script setup lang="ts">
+import { ref } from 'vue';
+
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 import logo from '../../assets/images/warriors4Life-no-bg.png';
 import { UseNavBar } from '../../composables/UseNavBar.ts';
@@ -23,9 +25,11 @@ const {
   navLinks,
   activeTab,
   mobileMenuOpen,
-  isMobile,
+  isMobile = false,
   toggleMenu,
 } = UseNavBar();
+
+const isMobileIcon = ref<boolean>(false);
 </script>
 <!-- --------------------------------------------------------
                          < >MARKUP</>
@@ -95,8 +99,10 @@ const {
         <W4LButton @click="toggleMenu">Close</W4LButton>
         <!-- Dark mode SVG -->
         <DarkmodeIcon
-          height="28" width="28"
-          customClass="pl-10 cursor-pointer"
+          height="28"
+          width="28"
+          customClass="cursor-pointer"
+          :is-mobile="!isMobileIcon"
         />
       </div>
     </nav>
