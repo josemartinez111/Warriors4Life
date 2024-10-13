@@ -53,6 +53,7 @@ onMounted(() => {
         height="28"
         width="28"
         customClass="pl-10 cursor-pointer"
+        :is-mobile="!isMobile"
       />
     </div>
     
