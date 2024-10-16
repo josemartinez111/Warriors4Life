@@ -42,6 +42,8 @@ export function UseCarouselImages() {
     alt: extractFileName(path)    // Generate 'alt' text from the filename.
   })));
   
+  // Log the image array to debug the issue
+  console.log('Loaded images:', images);
   return { images };
 }
 
