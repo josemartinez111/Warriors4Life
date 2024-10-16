@@ -1,5 +1,5 @@
 <!-- ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
-            components/icons/DarkmodeIcon.vue
+          components > icons > DarkmodeIcon.vue
 ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ -->
 <!-- --------------------------------------------------------
                         SCRIPT-SETUP
@@ -17,15 +17,13 @@ type SVGIconProps = {
   customClass?: string;
   iconColor?: string;
   isDarkMode?: boolean;
-  isMobile?: boolean;
 }
 // ____________________________________________________________________
 
 const {
-  height = '24',
-  width = '24',
+  height = '28',
+  width = '28',
   customClass = '',
-  isMobile = false,
 } = defineProps<SVGIconProps>();
 
 /*
@@ -42,35 +40,30 @@ const { isDarkMode } = storeToRefs(store);
 const darkColor = ref<string>('#52A9FF');   // Hex color value for dark mode
 const lightColor = ref<string>('#e11d48');  // Hex color value for light mode
 
-// Compute the icon colors based on the current dark mode state
 const computeIconColors = computed(() => {
   return {
-    // `switchMode` is the background color of the toggle switch
     switchMode: isDarkMode.value ? darkColor.value : lightColor.value,
-    // `sun` is the color of the sun icon if in dark mode or mobile is light
-    sun: !isDarkMode.value && !isMobile
-      ? `fill-[${ lightColor.value }] stroke-[${ lightColor.value }]`
-      : 'fill-transparent stroke-current',
-    moon: isDarkMode.value && !isMobile
-      ? `fill-[${ darkColor.value }] stroke-[${ darkColor.value }]`
-      : 'fill-transparent stroke-current',
+    
+    // Inline style with custom colors for sun icon
+    sun: !isDarkMode.value
+      ? { fill: lightColor.value, stroke: lightColor.value }  // Use direct CSS styles for custom colors
+      : { fill: 'transparent', stroke: 'currentColor' },      // Default to transparent or current text color
+    
+    // Inline style with custom colors for moon icon
+    moon: isDarkMode.value
+      ? { fill: darkColor.value, stroke: darkColor.value }  // Dark mode colors
+      : { fill: '#ffffff', stroke: '#ffffff' }  // Explicit white fill and stroke for light mode
   };
 });
 
 const computeIconClass = (iconType: 'moon' | 'sun') => computed(() => {
   const colStart = iconType === 'sun' ? 'col-start-1' : 'col-start-2';
-  const baseClasses = `${colStart} row-start-1 stroke-base-100 fill-base-100`;
-  
-  const conditionalClass = !isMobile && !isDarkMode.value
-    ? computeIconColors.value[iconType]
-    : 'fill-rose-600 stroke-current';
-  
-  return `${baseClasses} ${conditionalClass}`;
+  const baseClasses = `${colStart} row-start-1 flex justify-center items-center`;
+  return baseClasses;  // Only layout, no color-related classes
 });
 
 const sunIconClass = computeIconClass('sun');
 const moonIconClass = computeIconClass('moon');
-
 </script>
 <!-- --------------------------------------------------------
                      <>MARKUP</>
