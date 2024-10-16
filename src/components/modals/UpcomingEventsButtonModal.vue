@@ -13,8 +13,6 @@ import { onMounted, ref } from 'vue';
 
 const { bgPinkFriday } = UseColorStore();
 const modal = ref<HTMLDialogElement | undefined>(undefined);
-const isMobile = ref<boolean>(true);
-
 const showModal = () => {
   modal.value?.showModal();
 };
@@ -50,10 +48,9 @@ onMounted(() => {
       
       <!-- Dark mode SVG -->
       <DarkmodeIcon
-        height="28"
-        width="28"
-        customClass="pl-10 cursor-pointer"
-        :is-mobile="!isMobile"
+        height="22"
+        width="22"
+        customClass="cursor-pointer"
       />
     </div>
     
@@ -66,7 +63,7 @@ onMounted(() => {
       Without this, clicking inside the modal would also trigger the
       onClickOutside function, which would then close the modal undesirably.
       -->
-      <div class="modal-box w-8/12 max-w-4xl shadow-transparent pb-11" @click.stop>
+      <div class="modal-box w-8/12 ml px max-w-4xl shadow-transparent pb-11" @click.stop>
         <!-- Close button -->
         <div class="modal-backdrop">
           <!-- Modal button inside the modal to close the calendar -->
