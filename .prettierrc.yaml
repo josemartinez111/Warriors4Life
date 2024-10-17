@@ -2,7 +2,7 @@
 # ________________________________
 plugins:
   - prettier-plugin-tailwindcss # need to install `prettier-plugin-tailwindcss`
-printWidth: 102
+printWidth: 120
 tabWidth: 2
 useTabs: false
 semi: true
