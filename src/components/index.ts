@@ -32,11 +32,29 @@ export { default as HomeHeroSection } from './page-components/home/W4LHeroSectio
 export { default as W4LImage } from './shared/image/W4LImage.vue';
 export { default as Ribbon } from './shared/ribbon/Ribbon.vue';
 
-/*  share/page-components/about: routes  */
+/*  page-components > about: routes  */
 export { default as SectionsContainer } from './page-components/SectionsContainer.vue';
 export { default as HomeEComSection } from './page-components/home/HomeEComSection.vue';
 export { default as AboutHeroCard } from './page-components/about/AboutHeroCard.vue';
 export { default as TeamCard } from './page-components/about/TeamCard.vue';
 export { default as MissionCard } from './page-components/about/MissionCard.vue';
 export { default as OurJourneyCard } from './page-components/about/OurJourneyCard.vue';
-// ---------------------------------------------------------
+// ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
+/* PAGES: ROUTES */
+
+/* page-components > our-journey: routes */
+export { default as CarouselSection } from './page-components/our-journey/CarouselSection.vue';
+export { default as ImageNavArrows } from './page-components/our-journey/ImageNavArrows.vue';
+// ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
+
+
+
+
+
+
+
+
+
+
+
+

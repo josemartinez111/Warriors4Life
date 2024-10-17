@@ -6,7 +6,7 @@ import { reactive } from 'vue';
 
 // Defines a type for the image objects to ensure type safety.
 // Each image object will include an 'id', 'src' for the URL, and 'alt' for the alternative text.
-type Image = {
+export type Image = {
   id: number;
   src: string;
   alt: string;
