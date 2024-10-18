@@ -1,5 +1,5 @@
 <!-- ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
-                       COMPONENT_PATH
+Components > PageComponents > OurJourney > Sections >  StackedImagesCard
 ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ -->
 <!-- --------------------------------------------------------
                         SCRIPT-SETUP
@@ -7,13 +7,13 @@
 <script setup lang="ts">
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 import {
-  UseCarouselImages
+  UseCarouselImages,
 } from '../../../../composables/UseCarouselImages.ts';
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 
 const { cardName } = defineProps<{
- cardName: string;
+  cardName: string;
 }>();
 
 // Use the composable to get images
@@ -33,6 +33,24 @@ const moveTopImageToBack = () => {
     currentImages.value.push(topImage); // Add the removed image to the end
   }
 };
+
+const getImageClasses = computed(() => (index: number) => {
+  const baseClasses = 'transition-transform duration-500 ease-in-out transform';
+  
+  if (index === 0) {
+    // Top image, centered
+    return `${baseClasses} translate-x-0 translate-y-0 scale-100 opacity-100`;
+  } else if (index === 1) {
+    // Second image, shifted more to the left
+    return `${baseClasses} sm:translate-x-[-15%] translate-y-4 scale-95 opacity-85`;
+  } else if (index === 2) {
+    // Third image, shifted more to the right
+    return `${baseClasses} sm:translate-x-[15%] translate-y-8 scale-90 opacity-70`;
+  } else {
+    // Other images, hidden
+    return 'hidden';
+  }
+});
 </script>
 <!-- --------------------------------------------------------
                      <>MARKUP</>
@@ -40,29 +58,20 @@ const moveTopImageToBack = () => {
 <template>
   <div class="cursor-pointer bg-white rounded-t-lg overflow-hidden">
     <!-- DaisyUI Stack for images -->
-    <div class="stack card-body pt-8 pl-4 sm:pl-6 md:pl-28 space-y-6 sm:space-y-4 sm:flex-col md:inline-grid">
+    <div class="stack pt-8 pb-2 mx-auto md:pl-[5.1rem] place-items-center pl-[5.1rem] sm:pl-0">
       <!-- Loop through images, click moves the top image to the back -->
       <img
         v-for="(image, index) in currentImages"
         :key="image.id"
         :src="image.src"
-        class="forloop-images transition-transform duration-500 ease-in-out transform"
-        :class="{
-          'translate-x-full': index === 0,
-          'translate-x-[-9%] translate-y-10 scale-85 opacity-70': index !== 1,
-          'translate-x-[-7%] translate-y-10 scale-90 opacity-65': index !== 2,
-          'translate-y-30 scale-95 opacity-50': index < 2,
-          'sm:translate-x-0 sm:translate-y-5 sm:scale-70 sm:opacity-80': index === 1,
-          'sm:translate-x-0 sm:translate-y-6 sm:scale-75 sm:opacity-70': index !== 2,
-          'sm:translate-y-10 sm:scale-80 sm:opacity-60': index < 2
-        }"
+        :class="['forloop-images', getImageClasses(index)]"
         :alt="image.alt"
         @click="moveTopImageToBack"
       />
     </div>
     
     <!-- Bottom section for the title with padding and space below images -->
-    <div class="pt-6 sm:pt-12 pb-6 text-center">
+    <div class="pt-4 sm:pt-8 pb-6 text-center">
       <h2 class="text-xl sm:text-2xl md:text-4xl font-bold text-special-blue">
         {{ cardName }}
       </h2>
@@ -74,33 +83,10 @@ const moveTopImageToBack = () => {
                             STYLES
 --------------------------------------------------------- -->
 <style scoped lang="postcss">
-.forloop-images {
-  @apply rounded-xl w-[14rem] h-[20rem] sm:w-[16rem]
-  sm:h-[22rem] md:w-[18rem] md:h-[25rem]
-  object-cover shadow-accent;
-}
-.carousel-item img {
-  @apply w-full h-full object-cover;
-}
-
-@media (max-width: 639px) {
-  .stack {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
+  .forloop-images {
+    @apply rounded-xl w-[14rem] h-[20rem] sm:w-[16rem] sm:h-[22rem]
+    md:w-[18rem] md:h-[25rem] object-cover shadow-accent mx-auto;
   }
-  
-  .stack > * {
-    position: static !important;
-    transform: none !important;
-    opacity: 1 !important;
-    margin-top: -4rem !important;
-  }
-  
-  .stack > *:first-child {
-    margin-top: 0 !important;
-  }
-}
 </style>
 <!-- ---------------------------------------------------- -->
 

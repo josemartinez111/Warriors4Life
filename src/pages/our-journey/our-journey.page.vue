@@ -45,9 +45,12 @@ const colorStore = UseColorStore();
           </div>
         </section>
         
-        <!-- Section 2 (New Section Below Section 1) -->
-        <StackedImagesSection />
+        
       </div>
+      
+      <!-- Section 2 (New Section Below Section 1) -->
+        <span class="pt-16 md:pt-28" />
+        <StackedImagesSection />
    </Layout>
 </template>
 <!-- --------------------------------------------------------

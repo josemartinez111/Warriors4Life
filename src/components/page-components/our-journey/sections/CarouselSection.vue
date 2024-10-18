@@ -36,27 +36,28 @@ watchEffect(() => {
 --------------------------------------------------------- -->
 <template>
   <div class="w-full md:w-1/2">
-    <div
-      class="carousel bg-white rounded-2xl overflow-hidden relative w-full h-[40vh] md:h-[55vh]">
-      <!-- Loop through images -->
-      <div
-        v-for="(image, index) in images"
-        :key="image.id"
-        class="carousel-item w-full h-full flex items-center justify-center transition-opacity duration-500"
-        v-show="index === currentIndex"
-        :class="{ 'opacity-100': index === currentIndex, 'opacity-0': index !== currentIndex }"
-      >
-        <img
-          :src="image.src"
-          class="w-full h-full object-cover"
-          :alt="image.alt"
-        />
-        <!-- Navigation Arrows ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ -->
-        <ImageNavArrows
-          :navigatePrev="() => navigateCarousel(currentIndex - 1)"
-          :navigateNext="() => navigateCarousel(currentIndex + 1)"
-        />
-      </div>
+    <div class="carousel bg-white rounded-2xl overflow-hidden relative w-full h-[40vh] md:h-[55vh]">
+      <!-- Navigation Arrows -->
+      <ImageNavArrows
+        :navigatePrev="() => navigateCarousel(currentIndex - 1)"
+        :navigateNext="() => navigateCarousel(currentIndex + 1)"
+      />
+      
+      <!-- Carousel Images with Transition -->
+      <transition-group name="carousel" tag="div">
+        <div
+          v-for="(image, index) in images"
+          :key="image.id"
+          v-show="index === currentIndex"
+          class="carousel-item w-full h-full absolute inset-0"
+        >
+          <img
+            :src="image.src"
+            class="w-full h-full object-cover"
+            :alt="image.alt"
+          />
+        </div>
+      </transition-group>
     </div>
   </div>
 </template>
@@ -64,13 +65,25 @@ watchEffect(() => {
                             STYLES
 --------------------------------------------------------- -->
 <style scoped lang="postcss">
-
 .carousel {
   @apply relative w-full h-[55vh] rounded-xl overflow-hidden shadow-lg;
 }
 
 .carousel-item img {
   @apply w-full h-full object-cover;
+}
+
+/* Transition styles */
+.carousel-enter-active, .carousel-leave-active {
+  @apply transition-opacity duration-500;
+}
+
+.carousel-enter-from, .carousel-leave-to {
+  @apply opacity-0;
+}
+
+.carousel-enter-to, .carousel-leave-from {
+  @apply opacity-100;
 }
 </style>
 <!-- ---------------------------------------------------- -->
