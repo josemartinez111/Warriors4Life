@@ -9,8 +9,8 @@
 import { ref, watchEffect } from 'vue';
 import {
   UseCarouselImages,
-} from '../../../composables/UseCarouselImages.ts';
-import { ImageNavArrows } from '../../index.ts';
+} from '../../../../composables/UseCarouselImages.ts';
+import { ImageNavArrows } from '../../../index.ts';
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 
 // Use the composable to get images

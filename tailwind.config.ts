@@ -67,6 +67,7 @@ export default {
         'paynes-blue': '#4F646F',
         'platinum': '#DEE7E7',
         'powder-blue': '#A4BFEB',
+        'special-blue': '#172554',
         'delta-blue': '#3A405A',
         'columbia-blue': '#BFD5E2',
         'ghost-white': '#F0EFF4',
