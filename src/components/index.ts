@@ -43,9 +43,9 @@ export { default as OurJourneyCard } from './page-components/about/OurJourneyCar
 /* PAGES: ROUTES */
 
 /* page-components > our-journey: routes */
-export { default as CarouselSection } from './page-components/our-journey/CarouselSection.vue';
+export { default as CarouselSection } from './page-components/our-journey/sections/CarouselSection.vue';
 export { default as ImageNavArrows } from './page-components/our-journey/ImageNavArrows.vue';
-export { default as LeftTextSection } from './page-components/our-journey/LeftTextSection.vue';
+export { default as LeftTextSection } from './page-components/our-journey/sections/LeftTextSection.vue';
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 
 

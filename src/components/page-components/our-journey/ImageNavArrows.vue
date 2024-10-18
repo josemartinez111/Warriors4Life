@@ -13,12 +13,10 @@ const LEFT_ARROW = '❮';
 const RIGHT_ARROW = '❯';
 
 // Props destructuring using Composition API
-const {navigatePrev, navigateNext} = defineProps<{
+const { navigatePrev, navigateNext } = defineProps<{
   navigatePrev: () => void;
   navigateNext: () => void;
 }>();
-
-
 </script>
 <!-- --------------------------------------------------------
                      <>MARKUP</>
@@ -49,7 +47,7 @@ const {navigatePrev, navigateNext} = defineProps<{
 
 .btn-circle {
   @apply w-12 h-12 flex items-center opacity-85 justify-center
-  rounded-full text-white bg-blue-800 shadow-lg hover:bg-rose-600
+  rounded-full text-white bg-special-blue  shadow-lg hover:bg-rose-600
   hover:text-white hover:shadow-xl transition duration-200;
 }
 </style>

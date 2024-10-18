@@ -13,11 +13,11 @@
                      <>MARKUP</>
 --------------------------------------------------------- -->
 <template>
-  <div class="w-full md:w-1/2 md:pl-16 mb-8 md:mb-0">
+  <div class="w-full md:w-2/3 md:pl-16 mb-8 md:mb-0">
     <h1
       class="text-2xl sm:text-3xl md:text-5xl font-medium mb-4 md:mb-6">Our Journey</h1>
     <p class="relative text-sm sm:text-base md:text-lg leading-normal md:leading-normal mb-6 md:mb-12">
-  At <span class="text-rose-600 text-base sm:text-lg md:text-xl">Warriors 4 Life</span>,
+  At <span class="leading-loose text-rose-600 text-base sm:text-lg md:text-xl">Warriors 4 Life</span>,
   our journey is one of resilience, healing, and unity. Every pedal stroke is a step toward reclaiming
   hope for our wounded veterans and their families. <span class="text-blue-400 text-base sm:text-lg md:text-xl">
   Through cycling</span>, we foster camaraderie, physical recovery, and emotional strength,

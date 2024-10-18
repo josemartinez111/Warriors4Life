@@ -35,7 +35,7 @@ const colorStore = UseColorStore();
         <!-- Text content area with proper spacing -->
         <div :class="[isDarkMode ? 'text-white' : 'text-blue-950', 'lg:w-9/12 mr-auto ml-0 text-center lg:text-left']">
           <div
-            class="text-blue-gray-500 p-3 inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-white"
+              class="text-blue-gray-500 p-3 inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-white"
           >
             <!-- SVG-Icon -->
             <svg
