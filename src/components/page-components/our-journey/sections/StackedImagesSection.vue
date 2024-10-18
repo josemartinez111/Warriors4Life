@@ -7,10 +7,14 @@
 <script setup lang="ts">
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 
-import StackedImagesCard from './StackedImagesCard.vue';
+import { StackedImagesCard } from '../../../../components';
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 
-const CARD_NAMES: string[] = ['First Stacked Card', 'Second Stacked Card', 'Third Stacked Card'];
+const CARD_NAMES: string[] = [
+  'First Stacked Card',
+  'Second Stacked Card',
+  'Third Stacked Card',
+];
 </script>
 <!-- --------------------------------------------------------
                      <>MARKUP</>

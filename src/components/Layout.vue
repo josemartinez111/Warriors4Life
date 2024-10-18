@@ -6,8 +6,7 @@
 --------------------------------------------------------- -->
 <script setup lang="ts">
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
-import { NavBar, Footer } from './index';
-import { W4LFloatingButton } from './index';
+import { NavBar, Footer, W4LFloatingButton } from '../components';
 import { storeToRefs } from 'pinia';
 import { UseDarkmodeStore } from '../stores';
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
