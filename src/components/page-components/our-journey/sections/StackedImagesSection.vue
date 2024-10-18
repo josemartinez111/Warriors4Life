@@ -24,7 +24,7 @@ const CARD_NAMES: string[] = [
     <!-- Container for the Stack of Images -->
     <div class="flex flex-row justify-between w-full px-4 space-x-6">
       <!-- DaisyUI Stack of Images with transition/Image Stack Card Iteration -->
-      <template v-for="(cardName, id) in CARD_NAMES" :key="id">
+      <template v-for="(cardName) in CARD_NAMES">
         <StackedImagesCard
           :card-name="cardName"
           class="w-full lg:w-1/3"
