@@ -2,7 +2,7 @@
 # ________________________________
 plugins:
   - prettier-plugin-tailwindcss # need to install `prettier-plugin-tailwindcss`
-printWidth: 120
+printWidth: 130
 tabWidth: 2
 useTabs: false
 semi: true
@@ -13,5 +13,5 @@ bracketSpacing: true
 jsxBracketSameLine: false
 arrowParens: "always"
 endOfLine: "lf"
-htmlWhitespaceSensitivity: 'strict'  # How to handle whitespaces in HTML
+#htmlWhitespaceSensitivity: 'strict'  # How to handle whitespaces in HTML
 # ________________________________
