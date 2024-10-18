@@ -6,12 +6,12 @@
 --------------------------------------------------------- -->
 <script setup lang="ts">
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
-import Layout from '../../components/Layout.vue';
 import { UseColorStore } from '../../stores';
 import {
   CarouselSection,
   LeftTextSection,
   StackedImagesSection,
+  Layout,
 } from '../../components';
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 
