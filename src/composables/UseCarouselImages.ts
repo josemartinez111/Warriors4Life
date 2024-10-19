@@ -30,7 +30,7 @@ const extractFileName = (path: string): string => {
 // ---------------------------------------------------------
 
 // Exported function UseCarouselImages for dynamically importing images and making them reactive.
-export function UseCarouselImages() {
+function UseCarouselImages() {
   const imageModules = import.meta.glob('../assets/images/gallery-carousel/*.{jpg,png}', { eager: true }) as Record<string, ImageModule>;
   let nextId = 1;
   
@@ -47,4 +47,5 @@ export function UseCarouselImages() {
   return { images };
 }
 
+export default UseCarouselImages;
 // ---------------------------------------------------------

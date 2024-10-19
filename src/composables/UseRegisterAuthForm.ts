@@ -14,7 +14,7 @@ interface FormField {
 }
 // ____________________________________________________________________
 
-export const UseRegisterAuthForm = () => {
+const UseRegisterAuthForm = () => {
   const formFields = ref<FormField[]>([
     {
       id: 'first-name',
@@ -81,4 +81,6 @@ export const UseRegisterAuthForm = () => {
   
     return { formFields, signInButtons };
 }
+
+export default UseRegisterAuthForm;
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞

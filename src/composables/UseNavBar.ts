@@ -9,7 +9,7 @@ import { NavLink } from '../types/navlink.ts';
 
 // ---------------------------------------------------------
 
-export const UseNavBar = () => {
+const UseNavBar = () => {
   const { bgPinkFriday } = UseColorStore();
   
   const navLinks: Array<NavLink> = [
@@ -60,4 +60,6 @@ export const UseNavBar = () => {
     toggleMenu,
   };
 };
+
+export default UseNavBar;
 // ---------------------------------------------------------

@@ -1,5 +1,5 @@
 // ---------------------------------------------------------
-//                  stores/UseDarkmodeStore.ts
+//                  Store > UseDarkmodeStore
 // ---------------------------------------------------------
 import { defineStore } from 'pinia';
 import { useDark, useToggle } from '@vueuse/core';

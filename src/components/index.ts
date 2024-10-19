@@ -45,7 +45,7 @@ export { default as Ribbon } from './shared/ribbon/Ribbon.vue';
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 
 /*  page-components > about: routes  */
-export { default as SectionsContainer } from './page-components/SectionsContainer.vue';
+export { default as SectionsContainer } from './page-components/home/SectionsContainer.vue';
 export { default as HomeEComSection } from './page-components/home/HomeEComSection.vue';
 export { default as AboutHeroCard } from './page-components/about/AboutHeroCard.vue';
 export { default as TeamCard } from './page-components/about/TeamCard.vue';
@@ -68,6 +68,9 @@ export {
 export {
   default as StackedImagesCard,
 } from './page-components/our-journey/sections/StackedImagesCard.vue';
+export {
+  default as JourneyPageContainer,
+} from './page-components/our-journey/JourneyPageContainer.vue';
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 
 

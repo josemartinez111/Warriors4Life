@@ -6,8 +6,8 @@
 --------------------------------------------------------- -->
 <script setup lang="ts">
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
-import { computed, toRefs } from 'vue';
-import { UseCalendar } from '../../../composables/UseCalendar.ts';
+import { computed } from 'vue';
+import { UseCalendar } from '../../../composables';
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 
 // Composables
@@ -22,7 +22,7 @@ const {
 // Has to build the calendar for the whole month
 generateWeeks();
 
-const props = withDefaults(defineProps<{
+const { handleCalendarClick } = withDefaults(defineProps<{
   handleCalendarClick?: () => void;
 }>(), {
   handleCalendarClick: () => {
@@ -33,8 +33,6 @@ const props = withDefaults(defineProps<{
     console.error(err);
   },
 });
-
-const { handleCalendarClick } = toRefs(props);
 
 const todayComputed = computed(() => new Date().setHours(0, 0, 0, 0));
 </script>

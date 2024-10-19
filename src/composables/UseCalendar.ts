@@ -5,8 +5,7 @@ import { computed, ref } from 'vue';
 import { FutureEvent, Week } from '../types/calendar-types.ts';
 // ---------------------------------------------------------
 
-
-export function UseCalendar() {
+function UseCalendar() {
   const daysOfWeek = ref([
     'Sunday', 'Monday',
     'Tuesday', 'Wednesday',
@@ -69,4 +68,6 @@ export function UseCalendar() {
     generateWeeks,
   }
 }
+
+export default UseCalendar;
 // ---------------------------------------------------------
