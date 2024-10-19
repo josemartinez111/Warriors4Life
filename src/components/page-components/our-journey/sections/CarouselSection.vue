@@ -7,9 +7,7 @@
 <script setup lang="ts">
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 import { ref, watchEffect } from 'vue';
-import {
-  UseCarouselImages,
-} from '../../../../composables/UseCarouselImages.ts';
+import { UseCarouselImages } from '../../../../composables';
 import { ImageNavArrows } from '../../../index.ts';
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 
@@ -37,19 +35,12 @@ watchEffect(() => {
 <template>
   <div class="w-full md:w-1/2">
     <div class="carousel bg-white rounded-2xl overflow-hidden relative w-full h-[40vh] md:h-[55vh]">
-      <!-- Navigation Arrows -->
-      <ImageNavArrows
-        :navigatePrev="() => navigateCarousel(currentIndex - 1)"
-        :navigateNext="() => navigateCarousel(currentIndex + 1)"
-      />
-      
-      <!-- Carousel Images with Transition -->
-      <transition-group name="carousel" tag="div">
+      <TransitionGroup name="fade" tag="div">
         <div
           v-for="(image, index) in images"
           :key="image.id"
           v-show="index === currentIndex"
-          class="carousel-item w-full h-full absolute inset-0"
+          class="carousel-item w-full h-full absolute top-0 left-0 flex items-center justify-center"
         >
           <img
             :src="image.src"
@@ -57,13 +48,20 @@ watchEffect(() => {
             :alt="image.alt"
           />
         </div>
-      </transition-group>
+      </TransitionGroup>
+      
+      <!-- Navigation Arrows ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ -->
+      <ImageNavArrows
+        :navigatePrev="() => navigateCarousel(currentIndex - 1)"
+        :navigateNext="() => navigateCarousel(currentIndex + 1)"
+      />
     </div>
   </div>
 </template>
 <!-- --------------------------------------------------------
                             STYLES
 --------------------------------------------------------- -->
+<!--suppress CssUnusedSymbol -->
 <style scoped lang="postcss">
 .carousel {
   @apply relative w-full h-[55vh] rounded-xl overflow-hidden shadow-lg;
@@ -73,17 +71,14 @@ watchEffect(() => {
   @apply w-full h-full object-cover;
 }
 
-/* Transition styles */
-.carousel-enter-active, .carousel-leave-active {
-  @apply transition-opacity duration-500;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
 }
 
-.carousel-enter-from, .carousel-leave-to {
-  @apply opacity-0;
-}
-
-.carousel-enter-to, .carousel-leave-from {
-  @apply opacity-100;
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
 <!-- ---------------------------------------------------- -->

@@ -8,7 +8,7 @@
 <script setup lang="ts">
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 import logo from '../../assets/images/warriors4Life-no-bg.png';
-import { UseNavBar } from '../../composables/UseNavBar.ts';
+import { UseNavBar } from '../../composables';
 import {
   MenuDropdownIcon,
   UpcomingEventsButtonModal,

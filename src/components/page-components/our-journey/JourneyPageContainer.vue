@@ -1,55 +1,55 @@
 <!-- ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
-  page-components > our-journey > our-journey.page.vue
+Components > PageComponents > OurJourney > JourneyPageContainer
 ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ -->
 <!-- --------------------------------------------------------
                         SCRIPT-SETUP
 --------------------------------------------------------- -->
 <script setup lang="ts">
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
-import {
-  CarouselSection,
-  LeftTextSection,
-  StackedImagesSection,
-  Layout, JourneyPageContainer,
-} from '../../components';
+import { UseColorStore, UseDarkmodeStore } from '../../../stores';
+import { storeToRefs } from 'pinia';
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 
+
+const colorStore = UseColorStore();
+const store = UseDarkmodeStore();
+const { isDarkMode } = storeToRefs(store);
 </script>
 <!-- --------------------------------------------------------
                      <>MARKUP</>
 --------------------------------------------------------- -->
+
 <template>
-   <Layout>
-     <JourneyPageContainer>
-       <template #journey-page-container>
-          <!-- Content and Carousel -->
-          <div class="carousel-content">
-            <!-- Left Text Section -->
-            <LeftTextSection />
-            
-            <!-- Carousel Section -->
-            <CarouselSection />
-          </div>
-       </template>
-     </JourneyPageContainer>
-       
-     <!-- Section 2 (New Section Below Section 1) -->
-     <span class="pt-16 md:pt-28" />
-     <StackedImagesSection />
-   </Layout>
+  <!-- Background Section with Gradient -->
+  <!-- "[isDarkMode ? 'bg-desperado-black' : 'bg-white', 'w-full mt-16 pt-16 z-10 drop-shadow']" -->
+  <div :class="['h-auto flex flex-col relative', isDarkMode ? 'bg-desperado-black' : 'bg-white', 'w-full z-10 drop-shadow']">
+    <!-- Section 1 (First Section with Flexbox Layout) -->
+    <section
+      :class="[!isDarkMode ? 'bg-desperado-black' : 'bg-white', 'pt-36 bg-the-squad-img section-details img-details relative w-full h-screen']">
+      <!-- Gradient overlay over background image (SOLO div only for styling classes) -->
+      <div
+        :class="[
+            `${colorStore.pinkFriday}`,
+            'absolute inset-0 bg-gradient-to-l from-blue-950 to-transparent/50'
+          ]"
+      />
+      
+      <!-- Named slot (children): journey-page-container -->
+      <slot name="journey-page-container" />
+    </section>
+  </div>
 </template>
 <!-- --------------------------------------------------------
                             STYLES
 --------------------------------------------------------- -->
 <style scoped lang="postcss">
 
-.carousel-content {
-  @apply container mx-auto z-10 text-left text-white h-full
-  flex flex-col md:flex-row items-center pb-5 px-6;
+.img-details {
+  @apply relative bg-cover bg-center;
 }
 
-.carousel-item img {
-  @apply w-full h-full object-cover;
+.section-details {
+  @apply text-white h-full flex items-center;
 }
 </style>
 <!-- ---------------------------------------------------- -->
