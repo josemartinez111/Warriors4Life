@@ -11,7 +11,11 @@ export const UseColorStore = defineStore('colorStore', () => {
   const bgPinkFriday = ref('bg-rose-600');
   const pinkFriday = ref('#E11D48');
   
-  return { dreamBlue, bgPinkFriday, pinkFriday };
+  return {
+    dreamBlue,
+    bgPinkFriday,
+    pinkFriday
+  };
 });
 // ---------------------------------------------------------
 

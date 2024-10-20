@@ -4,7 +4,7 @@
 import { computed, onMounted, onUnmounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import { UseColorStore } from '../stores';
-import { NavLink } from '../types/navlink.ts';
+import { NavlinkType } from '../types/navlink-type.ts';
 // ---------------------------------------------------------
 
 // ---------------------------------------------------------
@@ -12,7 +12,7 @@ import { NavLink } from '../types/navlink.ts';
 const UseNavBar = () => {
   const { bgPinkFriday } = UseColorStore();
   
-  const navLinks: Array<NavLink> = [
+  const navLinks: Array<NavlinkType> = [
     { name: 'Home', to: '/' },
     { name: 'About', to: '/about' },
     { name: 'Our Journey', to: '/our-journey' },
@@ -49,7 +49,7 @@ const UseNavBar = () => {
   
   // Compute the active tab based on the current route path
   const activeTab = computed(() => (
-    navLinks.find((item: NavLink) => item.to === route.path)?.name ?? 'Home'
+    navLinks.find((item: NavlinkType) => item.to === route.path)?.name ?? 'Home'
   ));
   
   return {
