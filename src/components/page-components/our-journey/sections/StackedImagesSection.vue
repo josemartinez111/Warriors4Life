@@ -13,9 +13,9 @@ import { UseDarkmodeStore } from '../../../../stores';
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 
 const CARD_NAMES: string[] = [
-  'First Stacked Card',
-  'Second Stacked Card',
-  'Third Stacked Card',
+  'MISSION',
+  'VISION',
+  'PURPOSE',
 ];
 
 const darkMode = UseDarkmodeStore();

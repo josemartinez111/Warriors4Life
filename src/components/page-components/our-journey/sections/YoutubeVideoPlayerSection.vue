@@ -24,8 +24,6 @@ const {
   stopVideo,
 } = UseVideo(videoID);
 
-
-
 const PlayerState = {
   UNSTARTED: -1,
   ENDED: 0,
@@ -41,9 +39,7 @@ function extractVideoID(url: string): string {
   const regExp = /(?:v=|\/)([0-9A-Za-z_-]{11}).*/;
   const match = url.match(regExp);
   
-  if (match && match[ 1 ]) {
-    return match[ 1 ];
-  }
+  if (match && match[ 1 ]) return match[ 1 ];
   
   console.error('Invalid YouTube URL');
   return '';
