@@ -35,15 +35,18 @@ const PlayerState = {
   CUED: 5,
 } as const;
 
+// Used above to extract the video ID from the URL
+// (Has to be a named function because hoisting doesn't work with arrow functions)
 function extractVideoID(url: string): string {
   const regExp = /(?:v=|\/)([0-9A-Za-z_-]{11}).*/;
   const match = url.match(regExp);
+  
   if (match && match[ 1 ]) {
     return match[ 1 ];
-  } else {
-    console.error('Invalid YouTube URL');
-    return '';
   }
+  
+  console.error('Invalid YouTube URL');
+  return '';
 }
 
 const isPlaying = computed(() => playerState.value === PlayerState.PLAYING);
@@ -65,7 +68,7 @@ const isEnded = computed(() => playerState.value === PlayerState.ENDED);
         <!-- Video container -->
         <div class="aspect-video w-full bg-base-300 flex justify-center items-center rounded-lg overflow-hidden">
           <!-- Bind the player element from the composable -->
-          <div ref="playerElement" class="w-full h-full"></div>
+          <div ref="playerElement" class="w-full h-full" />
         </div>
         
         <!-- Control buttons -->
@@ -76,7 +79,7 @@ const isEnded = computed(() => playerState.value === PlayerState.ENDED);
             @click="startVideo"
             :disabled="isPlaying"
           >
-            {{ isPlaying ? 'Playing' : 'Start Video' }}
+            {{ isPlaying ? 'Playing' : 'Play Video' }}
           </button>
           
           <!-- Pause Button -->
