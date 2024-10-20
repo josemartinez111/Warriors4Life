@@ -41,8 +41,8 @@ const computeCardTitleClasses = computed(() => {
   return [
     (!isDarkMode.value)
       ? 'text-special-blue'
-      : 'text-slate-300',
-    'text-xl sm:text-2xl md:text-2xl font-bold'
+      : 'text-slate-50',
+    'card-body rounded px-2 sm:px-3 py-1 sm:py-2 text-[1.3rem] text-5xl font-semibold tracking-wider opacity-25 uppercase bg-transparent'
   ];
 });
 </script>
@@ -67,10 +67,9 @@ const computeCardTitleClasses = computed(() => {
     
     <!-- Bottom section for the title with padding and space below images -->
     <div class="pt-4 sm:pt-8 pb-6 text-center">
-      <h2
-        :class="computeCardTitleClasses">
+      <span :class="computeCardTitleClasses">
         {{ cardName }}
-      </h2>
+      </span>
     </div>
   </div>
 </template>
