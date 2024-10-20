@@ -66,6 +66,10 @@ export {
   default as StackedImagesSection,
 } from './page-components/our-journey/sections/StackedImagesSection.vue';
 export {
+  default as YoutubeVideoPlayerSection,
+} from './page-components/our-journey/sections/YoutubeVideoPlayerSection.vue';
+
+export {
   default as StackedImagesCard,
 } from './page-components/our-journey/sections/StackedImagesCard.vue';
 export {

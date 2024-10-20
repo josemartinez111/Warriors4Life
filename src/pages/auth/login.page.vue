@@ -27,7 +27,7 @@ import { AuthenticationCard, LeftSideSectionAuthText } from '../../components';
 --------------------------------------------------------- -->
 <template>
   <!-- Hero -->
-  <Layout custom-class="bg-white">
+  <Layout theme-mode="w4l-light">
     <div class="auth-container">
       <div class="max-w-[85rem] px-4 sm:px-6 lg:px-8 lg:py-3 mx-auto">
         <!-- Grid -->

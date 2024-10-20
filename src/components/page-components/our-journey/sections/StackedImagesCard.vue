@@ -36,15 +36,21 @@ const getImageClasses = computed(() => (index: number) => {
       return 'hidden';
   }
 });
+
+const computeCardTitleClasses = computed(() => {
+  return [
+    (!isDarkMode.value)
+      ? 'text-special-blue'
+      : 'text-slate-300',
+    'text-xl sm:text-2xl md:text-2xl font-bold'
+  ];
+});
 </script>
 <!-- --------------------------------------------------------
                      <>MARKUP</>
 --------------------------------------------------------- -->
 <template>
-  <!--
-  :class="['h-auto flex flex-col relative', isDarkMode ? 'bg-desperado-black' : 'bg-white', 'w-full z-10 drop-shadow']"
-  -->
-  <div class="cursor-pointer bg-transparent rounded-t-lg overflow-hidden">
+  <div class="cursor-pointer text-slate-400 bg-transparent rounded-t-lg overflow-hidden">
     <!-- DaisyUI Stack for images -->
     <div
       class="stack pt-8 pb-2 mx-auto md:pl-[5.1rem] place-items-center pl-[5.1rem] sm:pl-0">
@@ -62,7 +68,7 @@ const getImageClasses = computed(() => (index: number) => {
     <!-- Bottom section for the title with padding and space below images -->
     <div class="pt-4 sm:pt-8 pb-6 text-center">
       <h2
-        :class="[!isDarkMode ? 'text-special-blue' : 'text-snow-white', 'text-xl sm:text-2xl md:text-2xl font-bold']">
+        :class="computeCardTitleClasses">
         {{ cardName }}
       </h2>
     </div>

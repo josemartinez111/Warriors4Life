@@ -24,12 +24,9 @@ const { isDarkMode } = storeToRefs(darkMode);
 <!-- --------------------------------------------------------
                      <>MARKUP</>
 --------------------------------------------------------- -->
-<!--
-:class="[`${isDarkMode ? `${colorStore.dreamBlue}` : 'bg-gray-100'}`, 'py-32 w-full mt-[8rem]', 'cursor-pointer bg-white rounded-t-lg overflow-hidden']"
--->
 <template>
   <section :class="[isDarkMode ? 'bg-desperado-black' : 'bg-white', 'w-full mt-16 pt-16 z-10 drop-shadow']">
-    <div class="image-card">
+    <div class="image-card shadow-xl">
       <StackedImagesCard
         v-for="cardName in CARD_NAMES"
         :key="cardName"

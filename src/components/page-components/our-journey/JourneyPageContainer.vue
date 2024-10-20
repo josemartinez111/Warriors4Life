@@ -21,7 +21,6 @@ const { isDarkMode } = storeToRefs(store);
 
 <template>
   <!-- Background Section with Gradient -->
-  <!-- "[isDarkMode ? 'bg-desperado-black' : 'bg-white', 'w-full mt-16 pt-16 z-10 drop-shadow']" -->
   <div :class="['h-auto flex flex-col relative', isDarkMode ? 'bg-desperado-black' : 'bg-white', 'w-full z-10 drop-shadow']">
     <!-- Section 1 (First Section with Flexbox Layout) -->
     <section

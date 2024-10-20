@@ -26,7 +26,7 @@ import { AboutHeroCard, OurJourneyCard, MissionCard, TeamCard } from '../../comp
                      <>MARKUP</>
 --------------------------------------------------------- -->
 <template>
-  <Layout image-class="bg-white">
+  <Layout theme-mode="w4l-dark">
     <main class="flex flex-col justify-center items-center min-h-screen w-full">
       <!-- Hero card -->
       <AboutHeroCard />
