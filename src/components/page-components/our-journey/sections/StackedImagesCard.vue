@@ -42,7 +42,7 @@ const computeCardTitleClasses = computed(() => {
     (!isDarkMode.value)
       ? 'text-special-blue'
       : 'text-slate-50',
-    'card-body rounded px-2 sm:px-3 py-1 sm:py-2 text-[1.3rem] text-5xl font-semibold tracking-wider opacity-25 uppercase bg-transparent'
+    'card-body rounded px-2 sm:px-3 py-1 drop-shadow sm:py-2 text-[1.8rem] font-semibold tracking-wider opacity-25 uppercase bg-transparent'
   ];
 });
 </script>
@@ -59,7 +59,7 @@ const computeCardTitleClasses = computed(() => {
         v-for="(image, index) in currentImages"
         :key="image.id"
         :src="image.src"
-        :class="['forloop-images', getImageClasses(index)]"
+        :class="['forloop-images drop-shadow-2xl', getImageClasses(index)]"
         :alt="image.alt"
         @click="moveTopImageToBack"
       />
