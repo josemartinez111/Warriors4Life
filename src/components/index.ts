@@ -2,7 +2,7 @@
 //      index.ts for all routes in this directory
 // ---------------------------------------------------------
 
-export { default as Layout } from './Layout.vue';
+export { default as Layout } from './layouts/Layout.vue';
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 
 /* icons: routes */

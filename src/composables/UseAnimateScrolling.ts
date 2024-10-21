@@ -49,7 +49,7 @@ function UseAnimateScrolling(options: AnimationOptions = {}) {
   const computeAnimateSection = computed(() => (sectionId: string) => ({
     'opacity-0': !sectionVisibility.value[sectionId],
     'opacity-100 translate-y-0': sectionVisibility.value[sectionId],
-    'transition-opacity duration-1000 ease-in-out': true
+    'transition-opacity duration-700 ease-in-out': true
   }));
   
   return {

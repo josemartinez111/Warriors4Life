@@ -15,7 +15,7 @@ import {
   ShowCalendarModal,
   HomeEComSection,
 } from '../../components';
-import Layout from '../../components/Layout.vue';
+import Layout from '../../components/layouts/Layout.vue';
 import { UseAnimateScrolling } from '../../composables';
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 

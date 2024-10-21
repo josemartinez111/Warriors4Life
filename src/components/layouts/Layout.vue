@@ -1,5 +1,5 @@
 <!-- ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
-                   components/Layout.vue
+              Components > Layout > Layout.vue
 ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ -->
 <!-- --------------------------------------------------------
                         SCRIPT-SETUP
@@ -8,9 +8,9 @@
 import { computed } from 'vue';
 
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
-import { NavBar, Footer, W4LFloatingButton } from '../components';
+import { NavBar, Footer, W4LFloatingButton } from '../index.ts';
 import { storeToRefs } from 'pinia';
-import { UseDarkmodeStore } from '../stores';
+import { UseDarkmodeStore } from '../../stores';
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 
 type ParallaxImage =
@@ -91,15 +91,8 @@ const getBGClass = computed(() => {
 
 /*noinspection CssUnusedSymbol*/
 .parallax-container {
-  @apply bg-fixed bg-cover absolute inset-0 w-full h-full z-0;
-  /*  background-image: url('../assets/images/many-flags.jpg');
-   background-size: cover;
-   background-attachment: fixed;
-   position: absolute;
-   inset: 0;
-   width: 100%;
-   height: 100%;
-   z-index: 0; */
+  @apply bg-cover bg-center absolute inset-0 w-full h-full z-0 bg-scroll tablet:bg-fixed;
+  background-size: 100% auto;
 }
 
 .content-container {
