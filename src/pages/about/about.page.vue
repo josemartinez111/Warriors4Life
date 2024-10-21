@@ -6,7 +6,7 @@
 --------------------------------------------------------- -->
 <script setup lang="ts">
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
-import Layout from '../../components/Layout.vue';
+import Layout from '../../components/layouts/Layout.vue';
 import { AboutHeroCard, OurJourneyCard, MissionCard, TeamCard } from '../../components';
 import { UseAnimateScrolling } from '../../composables';
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞

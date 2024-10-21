@@ -34,7 +34,12 @@ const onClickOutside = (event: MouseEvent) => {
   }
 };
 
-watch(() => isOpen.value, isOpenCallback, { immediate: true });
+watch(() => {
+    return isOpen.value;
+  },
+  isOpenCallback, {
+    immediate: true,
+  });
 
 onMounted(() => {
   window.addEventListener('click', onClickOutside);
@@ -50,8 +55,11 @@ onMounted(() => {
       @click.stop
     >
       <!-- Close button -->
-      <div class="modal-backdrop flex justify-center rounded-2xl sm:justify-end">
-        <W4LButton custom-class="text-white btn-md w-full hover:bg-rose-600 rounded-2xl uppercase mt-4 sm:mt-0" @click="closeModal">
+      <div
+        class="modal-backdrop flex justify-center rounded-2xl sm:justify-end">
+        <W4LButton
+          custom-class="text-white btn-md w-full hover:bg-rose-600 rounded-2xl uppercase mt-4 sm:mt-0"
+          @click="closeModal">
           <!-- Button name Slot -->
           <slot name="close-btn-name" />
         </W4LButton>
