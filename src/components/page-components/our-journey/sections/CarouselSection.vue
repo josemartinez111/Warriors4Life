@@ -34,7 +34,7 @@ watchEffect(() => {
 --------------------------------------------------------- -->
 <template>
   <div class="w-full md:w-1/2">
-    <div class="carousel bg-white rounded-2xl overflow-hidden relative w-full h-[40vh] md:h-[55vh]">
+    <div class="carousel drop-shadow bg-white rounded-2xl overflow-hidden relative w-full h-[40vh] md:h-[55vh]">
       <TransitionGroup name="fade" tag="div">
         <div
           v-for="(image, index) in images"

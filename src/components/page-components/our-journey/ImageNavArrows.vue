@@ -23,7 +23,7 @@ const { navigatePrev, navigateNext } = defineProps<{
 --------------------------------------------------------- -->
 <template>
 <div
-  class="absolute flex justify-between items-center inset-y-0 left-5 right-5">
+  class="absolute drop-shadow flex justify-between items-center inset-y-0 left-5 right-5">
   <a
     @click.prevent="navigatePrev"
     href="#"
