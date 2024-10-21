@@ -17,6 +17,7 @@ type PlayerStateChangeEvent = {
   data: number;
   target: unknown;
 }
+// ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 
 function UseVideo(videoID: Ref<string>) {
   const playerElement = ref<HTMLElement | null>(null);

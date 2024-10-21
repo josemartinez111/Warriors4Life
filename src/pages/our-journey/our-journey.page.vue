@@ -13,37 +13,52 @@ import {
   Layout, JourneyPageContainer,
   YoutubeVideoPlayerSection,
 } from '../../components';
+import { UseAnimateScrolling } from '../../composables';
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 
 const YOUTUBE_VIDEO_URL = 'https://youtu.be/PCvrdZOk_kk?si=LrtJ7E2ns6wZn1d-';
+
+const { computeAnimateSection } = UseAnimateScrolling({
+  threshold: 0.1, // Slightly increased threshold for better triggering
+  rootMargin: '-50px', // Negative margin to trigger slightly before the element is in view
+});
 </script>
 <!-- --------------------------------------------------------
                      <>MARKUP</>
 --------------------------------------------------------- -->
 <template>
-   <Layout theme-mode="w4l-dark">
-     <JourneyPageContainer>
-       <template #journey-page-container>
-          <!-- Content and Carousel -->
-          <div class="carousel-content">
-            <!-- Left Text Section -->
-            <LeftTextSection />
-            
-            <!-- Carousel Section -->
-            <CarouselSection />
-          </div>
-       </template>
-     </JourneyPageContainer>
-       
-     <!-- Section 2 (New Section Below Section 1) -->
-     <span class="pt-16 md:pt-28" />
-     <StackedImagesSection />
-     
-     <!-- Video Feed Section -->
-     <YoutubeVideoPlayerSection
-       :videoURL="YOUTUBE_VIDEO_URL"
-     />
-   </Layout>
+  <Layout theme-mode="w4l-dark">
+    <JourneyPageContainer>
+      <template #journey-page-container>
+        <div
+          id="carousel-section"
+          data-animate-section
+          :class="['carousel-content', computeAnimateSection('carousel-section')]"
+        >
+          <LeftTextSection />
+          <CarouselSection />
+        </div>
+      </template>
+    </JourneyPageContainer>
+
+    <div
+      id="stacked-images-section"
+      data-animate-section
+      :class="['pt-6 mobile:pt-6', computeAnimateSection('stacked-images-section')]"
+    >
+      <StackedImagesSection />
+    </div>
+
+    <div
+      id="video-section"
+      data-animate-section
+      :class="['pt-16 md:pt-28', computeAnimateSection('video-section')]"
+    >
+      <YoutubeVideoPlayerSection
+        :videoURL="YOUTUBE_VIDEO_URL"
+      />
+    </div>
+  </Layout>
 </template>
 <!-- --------------------------------------------------------
                             STYLES

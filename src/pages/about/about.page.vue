@@ -8,34 +8,56 @@
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 import Layout from '../../components/Layout.vue';
 import { AboutHeroCard, OurJourneyCard, MissionCard, TeamCard } from '../../components';
+import { UseAnimateScrolling } from '../../composables';
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 
-// const props = defineProps<{
-//  msg: string;
-// }>();
-
-// const { msg } = toRefs(props);
-
-// OR
-
-// const { msg } = defineProps<{
-//  msg: string;
-// }>();
+// Scroll animation
+const { computeAnimateSection } = UseAnimateScrolling({
+  threshold: 0.1,
+  rootMargin: '0px',
+});
 </script>
 <!-- --------------------------------------------------------
                      <>MARKUP</>
 --------------------------------------------------------- -->
 <template>
-  <Layout theme-mode="w4l-dark">
+  <Layout theme-mode="w4l-light">
     <main class="flex flex-col justify-center items-center min-h-screen w-full">
       <!-- Hero card -->
-      <AboutHeroCard />
+      <div
+        id="hero-card"
+        data-animate-section
+        :class="computeAnimateSection('hero-card')"
+      >
+        <AboutHeroCard />
+      </div>
+      
       <!-- Our Journey card -->
-      <OurJourneyCard />
+      <div
+        id="journey-card"
+        data-animate-section
+        :class="computeAnimateSection('journey-card')"
+      >
+        <OurJourneyCard />
+      </div>
+      
       <!-- Mission card -->
-      <MissionCard />
+      <div
+        id="mission-card"
+        data-animate-section
+        :class="computeAnimateSection('mission-card')"
+      >
+        <MissionCard />
+      </div>
+      
       <!-- Team card -->
-      <TeamCard />
+      <div
+        id="team-card"
+        data-animate-section
+        :class="computeAnimateSection('team-card')"
+      >
+        <TeamCard />
+      </div>
     </main>
   </Layout>
 </template>

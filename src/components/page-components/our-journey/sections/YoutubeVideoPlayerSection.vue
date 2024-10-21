@@ -89,7 +89,7 @@ const isEnded = computed(() => playerState.value === PlayerState.ENDED);
           
           <!-- Stop Button -->
           <button
-            class="btn btn-secondary w-full tablet:w-auto"
+            class="btn bg-rose-600 text-black w-full tablet:w-auto"
             @click="stopVideo"
             :disabled="isEnded"
           >

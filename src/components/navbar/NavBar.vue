@@ -1,5 +1,5 @@
 <!-- ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
-                     components/NavBar.vue
+              Components > Navbar > NavBar.vue
 ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ -->
 <!-- --------------------------------------------------------
                         SCRIPT-SETUP
@@ -17,6 +17,7 @@ import {
   DarkmodeIcon,
   Ribbon
 } from '../index';
+import { ref, onMounted, onUnmounted } from 'vue';
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 
 const {
@@ -26,6 +27,22 @@ const {
   isMobile = false,
   toggleMenu,
 } = UseNavBar();
+
+const mobileNavRef = ref<HTMLElement | null>(null);
+
+const handleClickOutside = (event: MouseEvent) => {
+  if (mobileMenuOpen.value && mobileNavRef.value && !mobileNavRef.value.contains(event.target as Node)) {
+    toggleMenu();
+  }
+};
+
+onMounted(() => {
+  document.addEventListener('mousedown', handleClickOutside);
+});
+
+onUnmounted(() => {
+  document.removeEventListener('mousedown', handleClickOutside);
+});
 </script>
 <!-- --------------------------------------------------------
                          < >MARKUP</>
@@ -85,8 +102,11 @@ const {
       </div>
       
       <!-- Mobile Nav Dropdown -->
-      <div :class="{ block: mobileMenuOpen, hidden: !mobileMenuOpen }"
-           class="mobile-nav">
+      <div
+        ref="mobileNavRef"
+        :class="{ block: mobileMenuOpen, hidden: !mobileMenuOpen }"
+        class="mobile-nav"
+      >
         <template v-for="link in navLinks" :key="`mobile-${link.name}`">
           <RouterLink :to="link.to" class="block text-white px-4 py-2">
             {{ link.name }}
