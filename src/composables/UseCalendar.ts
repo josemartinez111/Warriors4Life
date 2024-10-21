@@ -47,9 +47,10 @@ function UseCalendar() {
           time: '12:00~14:00',
         });
       }
+      
       week.days.push({ date, events });
       dayCount++;
-      
+
       if (dayCount % 7 === 0 || day === daysInMonth) {
         weeksArray.push(week);
         week = { days: [] };

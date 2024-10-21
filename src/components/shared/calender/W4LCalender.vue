@@ -49,9 +49,8 @@ const todayComputed = computed(() => new Date().setHours(0, 0, 0, 0));
         <!-- Header section with responsive font size -->
         <div class="header flex justify-between border-b px-2 py-3">
           <span
-            class="text-xs sm:text-sm lg:text-lg font-semibold">{{ currentMonth
-                                                                }} {{ currentYear
-                                                                }}</span>
+            class="text-xs sm:text-sm lg:text-lg font-semibold">
+            {{ currentMonth }} {{ currentYear }}</span>
           <span
             class="uppercase text-xs sm:text-sm md:text-base">Click me</span>
           <div class="buttons flex">
@@ -103,6 +102,12 @@ const todayComputed = computed(() => new Date().setHours(0, 0, 0, 0));
                     {{ event.name }} - {{ event.time }}
                   </div>
                 </div>
+              </td>
+              <!-- ADD NEW CODE HERE -->
+              <!-- Add empty <td> cells for remaining days after the last day -->
+              <td v-for="n in (7 - week.days.length)" :key="n" class="calendar-adjuster border h-full">
+                <!-- Empty block for spacing -->
+                <div class="day-date the-day empty-block"></div>
               </td>
             </tr>
           </tbody>
